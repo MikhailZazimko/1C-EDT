@@ -28,6 +28,21 @@ def document_column(name):
 
 
 class EDTContractTest(unittest.TestCase):
+    def test_object_module_only_compiles_where_server_dependency_exists(self):
+        code = (ROOT / 'Documents/Выработка/ObjectModule.bsl').read_text(encoding='utf-8-sig').strip()
+        guard = re.match(r'#Если\s+(.+)\s+Тогда\s*\n', code)
+        self.assertIsNotNone(guard, 'Server-only calls must not compile in the thick managed client')
+        contexts = set(re.split(r'\s+Или\s+', guard.group(1)))
+        module = ET.parse(ROOT / 'CommonModules/Расш1_ВыработкаСервер/Расш1_ВыработкаСервер.mdo').getroot()
+        context_flags = {'Сервер': 'server', 'ВнешнееСоединение': 'externalConnection',
+                         'ТолстыйКлиентОбычноеПриложение': 'clientOrdinaryApplication'}
+        self.assertEqual(contexts, set(context_flags))
+        for context in contexts:
+            self.assertEqual(module.findtext(context_flags[context]), 'true')
+        self.assertTrue(code.endswith('#КонецЕсли'))
+        self.assertEqual(len(re.findall(r'^#Если\b', code, re.M)), 1)
+        self.assertEqual(len(re.findall(r'^#КонецЕсли\b', code, re.M)), 1)
+
     def test_all_exported_xml_is_well_formed(self):
         for p in ROOT.rglob('*'):
             if p.suffix in {'.mdo', '.form', '.rights', '.cmi'}:
