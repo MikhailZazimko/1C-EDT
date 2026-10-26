@@ -28,6 +28,28 @@ def document_column(name):
 
 
 class EDTContractTest(unittest.TestCase):
+    def test_admin_journal_access_uses_platform_right_and_allows_missing_worker(self):
+        code = (ROOT / 'CommonModules/Расш1_ВыработкаСервер/Module.bsl').read_text(encoding='utf-8-sig')
+        context = re.search(r'Функция КонтекстРаботника\(\).*?КонецФункции', code, re.S).group()
+        # Право проверяется в текущем сеансе; имя учётной записи не даёт привилегий.
+        self.assertIn('ЭтоАдминистратор = ПравоДоступа("Администрирование", Метаданные)', context)
+        self.assertNotRegex(context, r'ИмяВхода\s*=\s*"Администратор"')
+        self.assertIn('Если НЕ ЕстьСопоставление И НЕ ЭтоАдминистратор Тогда', context)
+        self.assertIn('Если НЕ ЗначениеЗаполнено(Работник) И НЕ ЭтоАдминистратор Тогда', context)
+        self.assertLess(context.index('Если ЭтоАдминистратор Тогда'), context.index('ИначеЕсли РольДоступна("Мастер")'))
+        self.assertIn('Если ЭтоАдминистратор ИЛИ Роль = "Мастер" Тогда', context)
+
+    def test_admin_read_access_does_not_remove_worker_validation_on_write(self):
+        code = (ROOT / 'CommonModules/Расш1_ВыработкаСервер/Module.bsl').read_text(encoding='utf-8-sig')
+        check = re.search(r'Процедура ПроверитьДокумент\(Документ\).*?КонецПроцедуры', code, re.S).group()
+        self.assertIn('ПроверитьДоступКЗаказу(Документ.Заказ, Документ.Участок, Истина)', check)
+        self.assertIn('Документ.Работник <> Контекст.Работник', check)
+        access = re.search(r'Функция ПроверитьДоступКЗаказу\(.*?КонецФункции', code, re.S).group()
+        self.assertRegex(access, r'Если ТребуетсяРаботник И НЕ ЗначениеЗаполнено\(Контекст\.Работник\) Тогда\s+ВызватьИсключение')
+        form = DOCUMENT.with_name('Module.bsl').read_text(encoding='utf-8-sig')
+        new_portion = re.search(r'Функция НоваяПорция\(.*?КонецФункции', form, re.S).group()
+        self.assertIn('ПроверитьДоступКЗаказу(Заказ, Участок, Истина)', new_portion)
+
     def test_object_module_only_compiles_where_server_dependency_exists(self):
         code = (ROOT / 'Documents/Выработка/ObjectModule.bsl').read_text(encoding='utf-8-sig').strip()
         guard = re.match(r'#Если\s+(.+)\s+Тогда\s*\n', code)
