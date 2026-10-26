@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="fadf4974-732c-42ae-b11b-6ae97eebda6f" extendedConfigurationObject="bc4ed9b8-b3d8-43e3-a294-43d62bfd6949">
+  <producedTypes>
+    <objectType typeId="e6a15fd9-a06c-4479-a7b5-b407e3c5cf63" valueTypeId="eb8a771e-7efb-4c96-988f-65dabdae7804"/>
+    <refType typeId="d36dcbb6-6704-408b-ac20-a6817d999f66" valueTypeId="57cd3b7c-6c60-4755-b0ec-70ece09c47f6"/>
+    <selectionType typeId="9a4440c2-8bcd-4297-bcaa-9521bdd37d36" valueTypeId="327510aa-5ef3-4033-bd51-8efa9f1d0633"/>
+    <listType typeId="47b51fd3-d06f-4809-8926-1b896f39fcd1" valueTypeId="904ce5c5-ce9d-4d04-a603-7f6974bddecf"/>
+    <managerType typeId="0645f4db-2c12-4a21-9898-396d2ec91b05" valueTypeId="35915b2d-19fa-43b9-a915-efa03804de04"/>
+  </producedTypes>
+  <name>ЗаказНаПроизводство</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:DocumentExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+  </extension>
+  <useStandardCommands>true</useStandardCommands>
+  <attributes uuid="b543aa0f-14c6-45d8-a95f-00f93c952f24">
+    <name>Участок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участок</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Document>

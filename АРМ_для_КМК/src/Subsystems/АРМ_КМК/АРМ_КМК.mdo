@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="44ed2649-6e4b-47a9-81f9-e6f9cf2dd8cc">
+  <name>АРМ_КМК</name>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>CommonForm.ЖурналЗаказовВРаботу</content>
+  <content>Document.Выработка</content>
+  <content>Catalog.Марки</content>
+  <content>Catalog.Расценки</content>
+  <content>Catalog.ПричиныПростоев</content>
+  <content>Catalog.Участки</content>
+  <content>InformationRegister.ДопускиСотрудников</content>
+  <content>CommonForm.МаркиКМК</content>
+</mdclass:Subsystem>

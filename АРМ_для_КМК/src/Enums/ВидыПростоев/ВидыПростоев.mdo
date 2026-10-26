@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a72fcc45-19ad-43a8-a102-22bd734acc73">
+  <producedTypes>
+    <refType typeId="648ddd9c-5828-4395-96cd-9431edcd0e4c" valueTypeId="4d9a1fbf-7272-4008-8ba1-76ad63fe29a9"/>
+    <listType typeId="91ee91ff-bec1-4fb3-b856-3b810de35945" valueTypeId="a6829a46-3567-4d9e-be57-f280049805ae"/>
+    <managerType typeId="48e8be83-d1dc-410f-a636-6c76452643b2" valueTypeId="48d0f7c7-ae79-46fd-a158-949a53b87c17"/>
+  </producedTypes>
+  <name>ВидыПростоев</name>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="cf320748-8394-4e8b-9cc4-d72d203c129e">
+    <name>Организационный</name>
+  </enumValues>
+  <enumValues uuid="276de5c1-cc96-45ee-b85d-802c09dec98a">
+    <name>Технический</name>
+  </enumValues>
+  <enumValues uuid="7a4b4cc4-1114-4cbc-875e-115a4d01856c">
+    <name>Прочее</name>
+  </enumValues>
+</mdclass:Enum>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ec624d29-3a57-4891-b4d5-544fbb0384d2">
+  <producedTypes>
+    <objectType typeId="556f6b84-332d-4bdf-8d92-9ea6c3b2bf9b" valueTypeId="97565968-1c5c-4fa1-b6cd-2477f13e69db"/>
+    <refType typeId="4104abf0-b298-4e3b-9beb-3f9248cab763" valueTypeId="04d7b602-6716-4c36-9ced-1ed04cb44f61"/>
+    <selectionType typeId="99ba267b-1c6f-42a4-9f83-d0d990e0cd5f" valueTypeId="e274b0e0-6e01-4f9c-b90c-748cb3def2be"/>
+    <listType typeId="eef693c0-82a9-4b8d-80a6-dbf6ae4ea5e5" valueTypeId="ea03e080-82d4-438b-a689-8290d5056102"/>
+    <managerType typeId="fb32d5aa-ad3d-4033-a6d8-9936ac1822be" valueTypeId="91245858-9f45-4580-9a47-02a8c2eaa1aa"/>
+  </producedTypes>
+  <name>Участки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Производственные участки</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Участки.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Участки.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Производственный участок</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Производственные участки</value>
+  </listPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="f7cfba9d-d8c6-4e08-8c27-bf35f2baafb7">
+      <name>Резка</name>
+      <description>Резка</description>
+    </items>
+    <items id="daebb2e5-a8c5-4173-807f-cba5b66b2758">
+      <name>ГАР</name>
+      <description>ГАР</description>
+    </items>
+    <items id="b2a29e12-11a8-4a2b-acee-32549fcbc445">
+      <name>Центра</name>
+      <description>Центра</description>
+    </items>
+    <items id="b8b8b11d-6a2c-4fcb-a7c7-6ab253c9c110">
+      <name>Сверловка</name>
+      <description>Сверловка</description>
+    </items>
+    <items id="0fc3b2c1-5533-4d61-8644-f55276093bea">
+      <name>Мойка</name>
+      <description>Мойка</description>
+    </items>
+    <items id="6e76ce46-b8f5-4f46-8a80-d0cd1cebbf54">
+      <name>Контроль</name>
+      <description>Контроль</description>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="7a2b118c-edec-4789-b9ca-e7d08606d515">
+    <name>Порядок</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

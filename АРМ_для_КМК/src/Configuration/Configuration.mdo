@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="0ff47914-1017-48f0-b558-f1825e4d5b90">
+  <name>АРМ_для_КМК</name>
+  <synonym>
+    <key>ru</key>
+    <value>АРМ_для_КМК</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <commandInterface>Extended</commandInterface>
+    <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
+    <defaultLanguage>Checked</defaultLanguage>
+    <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
+    <compatibilityMode>Checked</compatibilityMode>
+    <defaultRoles>Extended</defaultRoles>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="62f85c45-4527-4e1a-8270-e7b74875c5d6"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="2760cf90-fbd6-4765-ad3d-4d5e0cc1885c"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="ef238c47-9a73-45dc-8795-0df9c0de07f4"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="8b7547c3-53f6-4f5f-a7c9-6d9c2fd3dd12"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="227741a4-3bbc-4b3e-b521-eae4765be257"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="159b8435-41be-4172-8ae5-369aa958a99c"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="ea8481a6-5dd9-426c-84bc-609665590401"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>Расш1_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.5.1</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>Customization</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <interfaceCompatibilityMode>TaxiEnableVersion8_5</interfaceCompatibilityMode>
+  <compatibilityMode>8.5.1</compatibilityMode>
+  <languages uuid="3d85ac4b-091a-46e8-9fff-7a483fc1bddf" extendedConfigurationObject="af1b61ff-d1b9-4053-ad85-8259b6626adc">
+    <name>Русский</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:LanguageExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <languageCode>Checked</languageCode>
+    </extension>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.АРМ_КМК</subsystems>
+  <roles>Role.Оператор</roles>
+  <roles>Role.Мастер</roles>
+  <roles>Role.Контролер</roles>
+  <commonForms>CommonForm.ЖурналЗаказовВРаботу</commonForms>
+  <commonForms>CommonForm.МаркиКМК</commonForms>
+  <catalogs>Catalog.Участки</catalogs>
+  <catalogs>Catalog.Сотрудники</catalogs>
+  <catalogs>Catalog.Номенклатура</catalogs>
+  <catalogs>Catalog.ХарактеристикиНоменклатуры</catalogs>
+  <catalogs>Catalog.ПричиныПростоев</catalogs>
+  <catalogs>Catalog.Марки</catalogs>
+  <catalogs>Catalog.Расценки</catalogs>
+  <catalogs>Catalog.СостоянияЗаказовНаПроизводство</catalogs>
+  <documents>Document.ЗаказНаПроизводство</documents>
+  <documents>Document.Выработка</documents>
+  <enums>Enum.ВидыПростоев</enums>
+  <enums>Enum.СтатусыМарок</enums>
+  <enums>Enum.ВидыРасценок</enums>
+  <informationRegisters>InformationRegister.ДопускиСотрудников</informationRegisters>
+  <accumulationRegisters>AccumulationRegister.ВыработкаПоЗаказам</accumulationRegisters>
+</mdclass:Configuration>

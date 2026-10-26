@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="09497a96-46f3-42bc-8776-7ed4c57a4dfd">
+  <producedTypes>
+    <selectionType typeId="4bdb50f3-ada3-44fd-a718-73171ed9c69f" valueTypeId="9077b310-7ccc-4325-9213-508f452faec7"/>
+    <listType typeId="6eb1f2a6-948d-4302-9e57-2fe3cd5f0312" valueTypeId="665252bd-4da6-46c7-9447-a9f76f319cbc"/>
+    <managerType typeId="ecaddb5a-9190-44c8-95b7-d7fbb1183209" valueTypeId="e07d9082-48ee-4331-b413-4405e8e3928c"/>
+    <recordSetType typeId="ba4a5d00-635a-4d1e-ae37-f96398f190d4" valueTypeId="bc1c483e-7f80-43bc-ae87-cf31ab3366df"/>
+    <recordKeyType typeId="fbf830b0-c63a-4fa3-8897-25f1c700ddc9" valueTypeId="6bdf59ef-01c6-454c-80b4-2cb8b376ee7f"/>
+    <recordType typeId="368e37e7-dff6-421f-9a6a-91e906a6a769" valueTypeId="58c9dedc-0be7-401f-b6cf-e8e9585f8e40"/>
+    <recordManagerType typeId="37b07ae8-797f-4bd1-be49-326777b3eef0" valueTypeId="082e4a21-e492-4ec1-9c21-c12fb66ac280"/>
+  </producedTypes>
+  <name>ДопускиСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Допуски сотрудников к участкам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Допуск сотрудника</value>
+  </recordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Допуски сотрудников</value>
+  </listPresentation>
+  <resources uuid="9f2d4a1f-acc0-4f08-91fd-4b30ea4a9971">
+    <name>Разрешен</name>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="81af7799-452f-4d6c-b687-f872fa1a3a9b">
+    <name>Сотрудник</name>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4a7b4409-2d2a-41a7-8647-ec3682ae845d">
+    <name>Участок</name>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

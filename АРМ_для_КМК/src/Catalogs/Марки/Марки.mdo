@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e8899c64-2437-481d-8f27-bb60fa9dda7b">
+  <producedTypes>
+    <objectType typeId="36bc95f7-b3ee-4883-a25e-b4a9bf384026" valueTypeId="c27544c3-920c-4a51-85e5-2ef4d1fcbb0a"/>
+    <refType typeId="0248ef6e-34c5-463f-869a-dd1451f7ed76" valueTypeId="12953caf-563c-4dd7-8e9f-2c41556bb389"/>
+    <selectionType typeId="31a05d75-172d-4847-8a86-fbb8fd2b0d73" valueTypeId="7851f301-b030-43cf-92f7-513254d26cd0"/>
+    <listType typeId="4d2197df-258a-440b-8358-34d7c336323b" valueTypeId="6f359efe-3165-4f07-ba3e-c9bc7cd8e985"/>
+    <managerType typeId="783dbd78-0d2f-43e2-ba1a-5bdfdd2dc031" valueTypeId="5964ba13-0040-469d-85d4-58da40a11726"/>
+  </producedTypes>
+  <name>Марки</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Марки.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Марки.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Марка</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Марки</value>
+  </listPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="cd7b210f-3348-4398-978e-6d00045ee65b">
+    <name>Заказ</name>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="253fd591-a65b-478e-8fc7-6d9c7599a67e">
+    <name>Номенклатура</name>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="88acdc74-abc1-4925-bb9e-f60e18c981b3">
+    <name>Характеристика</name>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="32827f40-14d5-4523-b76c-45b8030ee2fc">
+    <name>Участок</name>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="be340978-eb85-472b-a132-20f3b75e08c5">
+    <name>Статус</name>
+    <type>
+      <types>EnumRef.СтатусыМарок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="59c697f2-e2d4-4be6-b733-72f94b655c6b">
+    <name>ПредыдущаяМарка</name>
+    <type>
+      <types>CatalogRef.Марки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8ed404dd-8090-4656-9c92-8a9a39c502e0">
+    <name>Количество</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

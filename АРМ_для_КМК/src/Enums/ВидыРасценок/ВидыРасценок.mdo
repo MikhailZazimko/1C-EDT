@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="517704ae-0b51-48cc-8244-f90243fe29a4">
+  <producedTypes>
+    <refType typeId="a3d60e90-2cb1-495a-9f41-2bcf07dde38d" valueTypeId="f7a45b2e-7c7a-4ed3-82f4-a5ed162fe646"/>
+    <listType typeId="e8852e2f-9920-400b-9715-e859674b9207" valueTypeId="0a07ec57-16e9-4943-90be-ff9886cf1552"/>
+    <managerType typeId="480df03e-0259-450f-9524-01a989190866" valueTypeId="3f32670f-fa34-4e75-aedb-e1d0b172693e"/>
+  </producedTypes>
+  <name>ВидыРасценок</name>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="a5bade28-0d0f-4f18-87fc-0eb43429e25b">
+    <name>ЗаЕдиницу</name>
+  </enumValues>
+  <enumValues uuid="2edad9a6-1873-4cb5-b553-9a2825120ec8">
+    <name>ЗаЧасПростоя</name>
+  </enumValues>
+</mdclass:Enum>

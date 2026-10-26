@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7b75b5f0-dea6-4e0f-96e9-9c54c3c2acbd">
+  <producedTypes>
+    <objectType typeId="d4622be1-a036-4e95-909f-93dccc9e8c3e" valueTypeId="50921fad-ad2e-40b8-a4cd-2a4c3a93a6af"/>
+    <refType typeId="a24f59e2-51dd-45c8-97e2-d83fd3cc8b32" valueTypeId="b56328e1-7af4-4611-965e-7b322e6636b7"/>
+    <selectionType typeId="1bfb3df4-d1cf-4481-8408-7ca77edd00bd" valueTypeId="6a42303b-f987-4918-9173-9630b6ab2f3b"/>
+    <listType typeId="19171bab-1a44-4f6e-a250-c7af62c30f12" valueTypeId="f6df7e4d-16fa-4436-b087-86652f9466b9"/>
+    <managerType typeId="b7089073-3cf9-4c5f-b939-968dd0b1f75c" valueTypeId="0ff2719d-e86c-411d-b3ed-1ae7da1d0c81"/>
+  </producedTypes>
+  <name>ПричиныПростоев</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ПричиныПростоев.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ПричиныПростоев.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Причина простоя</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Причины простоев</value>
+  </listPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="accdb07a-251f-462d-bda3-682fa7946037">
+    <name>ВидПростоя</name>
+    <type>
+      <types>EnumRef.ВидыПростоев</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

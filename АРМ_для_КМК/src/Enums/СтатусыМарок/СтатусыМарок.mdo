@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f15d221d-bfc3-4581-83f8-3d10166c2cb0">
+  <producedTypes>
+    <refType typeId="b2cb422f-7998-4aaf-b35e-e6b687acf06f" valueTypeId="f3401d8b-29db-4230-855c-f7a8444cc64c"/>
+    <listType typeId="eb86bbaa-cdbd-4727-bf0a-bab26b0ce2ab" valueTypeId="d77f0187-61f0-4e24-b44b-a696268ef244"/>
+    <managerType typeId="e71a4284-e94a-4777-bf50-667777657bb1" valueTypeId="ea115e99-cc65-4591-bd5a-63bd74cd2aa7"/>
+  </producedTypes>
+  <name>СтатусыМарок</name>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="d8d6e03a-be0f-4b4e-b3fd-550268db4ca5">
+    <name>Годная</name>
+  </enumValues>
+  <enumValues uuid="80485f57-4494-4db5-ad80-83b1525528d5">
+    <name>НП</name>
+  </enumValues>
+  <enumValues uuid="bedccdd0-e548-43b3-8a65-665bae284659">
+    <name>ВРаботе</name>
+  </enumValues>
+  <enumValues uuid="4efedffb-ed71-47cd-9c01-5ef675c0cf52">
+    <name>Списана</name>
+  </enumValues>
+</mdclass:Enum>

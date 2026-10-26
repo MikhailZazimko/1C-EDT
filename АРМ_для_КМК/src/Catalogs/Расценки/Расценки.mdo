@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="daeb3793-0a09-4677-aee3-e99a4992df0c">
+  <producedTypes>
+    <objectType typeId="b0f532e8-4b3c-4c47-a3ea-f82c397b13b6" valueTypeId="6d93c22d-616e-4edd-bb88-21bd9a994006"/>
+    <refType typeId="3a8b650c-937f-46f8-a081-e78ae2c7dac2" valueTypeId="f9c5b500-1695-43fb-9f69-8b6888894e75"/>
+    <selectionType typeId="641e9e7d-2045-43d5-92f7-7b1952a36539" valueTypeId="25adfbbb-97c5-47ac-865d-19517c22be6a"/>
+    <listType typeId="50833bf0-ff9b-4149-843d-657e6636390d" valueTypeId="9fabeb9b-69ba-4123-b390-317cf6306067"/>
+    <managerType typeId="c4b96f5a-bc0c-402f-87fc-08abaa76ec42" valueTypeId="c2cb8f93-4db2-447f-a4d2-f2e072fa55d6"/>
+  </producedTypes>
+  <name>Расценки</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Расценки.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Расценки.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Расценка</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Расценки</value>
+  </listPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="f6c1d6da-d438-4611-b122-0e1645c46031">
+    <name>Участок</name>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9c869718-ed9b-4f1a-86c8-8848794e708e">
+    <name>Номенклатура</name>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="66e28978-7294-40a2-ac84-a724da3d4a00">
+    <name>ВидРасценки</name>
+    <type>
+      <types>EnumRef.ВидыРасценок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cb86e38d-bc29-464d-8a39-5f4cd62733de">
+    <name>Сумма</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

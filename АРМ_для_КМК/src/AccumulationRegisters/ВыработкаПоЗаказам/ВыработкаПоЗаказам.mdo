@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6ff59c4-5570-4d3b-a3ed-e577c047f409">
+  <producedTypes>
+    <selectionType typeId="c19cf763-ce8a-4790-b209-06eb12de1fd3" valueTypeId="318313ad-8374-46b0-bb53-2884be5b3f06"/>
+    <listType typeId="843ab765-fea7-429a-9e03-2117ababb7b6" valueTypeId="369c27f4-0bcc-4b35-ba95-fdaffb857dfd"/>
+    <managerType typeId="6b023692-6094-43bd-afb5-fc8fcdcc2e5c" valueTypeId="f50bc2b9-cd38-4b21-a442-58d8c6434dbf"/>
+    <recordSetType typeId="55e4c8e0-68d3-4100-9deb-ca12e8ad2bd5" valueTypeId="ad33d3ae-fe7d-4fc1-bc04-2beb2c0f1ded"/>
+    <recordKeyType typeId="8580b92a-5663-4fba-b700-61a1ec3e8760" valueTypeId="02415737-42e0-4744-a0e8-8c5931401623"/>
+    <recordType typeId="485a5ed9-deb3-4667-87e4-e90ea5e6be54" valueTypeId="aeb69f66-a559-4de5-a972-c4775ad45531"/>
+  </producedTypes>
+  <name>ВыработкаПоЗаказам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выработка по заказам</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Выработка по заказам</value>
+  </listPresentation>
+  <resources uuid="68cb4219-0230-4c8e-b428-dc4f220274ed">
+    <name>Выполнено</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="791259d1-4e55-49bd-a205-1a0ddcda5af9">
+    <name>Брак</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="191a1c34-b52c-4944-ae34-d48ba06c5067">
+    <name>Заказ</name>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b3b5afd7-02c6-42a6-9b3f-725739a864ce">
+    <name>Номенклатура</name>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bc6e5869-85af-4f63-9ff4-55ec93693493">
+    <name>Характеристика</name>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4077caa3-1d5b-45b6-b06e-a548c0a0d5c2">
+    <name>Участок</name>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>
