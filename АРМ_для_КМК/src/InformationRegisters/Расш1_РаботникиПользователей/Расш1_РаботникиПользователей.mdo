@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="82e0371b-480d-4cac-be3d-bd0215e564a3">
+  <producedTypes>
+    <selectionType typeId="5a24e782-eab2-41ce-8ea8-319da040b808" valueTypeId="7f243354-3eb8-49e8-b34b-3d51fabcf3be" />
+    <listType typeId="7a6d0fdd-5d65-4cee-a4fe-bf08667f2388" valueTypeId="2bff79c7-de73-469c-8907-1feb2d655122" />
+    <managerType typeId="925fed74-3ab3-4fc1-ba67-112584f5cc69" valueTypeId="3f76faf2-f997-47dc-b5f0-fd27878fbaa2" />
+    <recordSetType typeId="d5a86f22-0bdc-45fb-97d4-03060986cf13" valueTypeId="0940c5ec-dac1-4f25-8873-dd25b1aee89f" />
+    <recordKeyType typeId="6c47a721-5614-492f-af8d-9d451f0b54f3" valueTypeId="59b4ee3e-db44-4367-858b-c980711f9e70" />
+    <recordType typeId="649003de-53e3-4a54-8287-084507b39d78" valueTypeId="b0b31a35-f911-4d42-9664-62ea67309711" />
+    <recordManagerType typeId="0afa5ac9-7c02-44d4-9d6d-8c0c8f1c4032" valueTypeId="deb6c4cc-0eb1-442f-9bbb-5cc3d1e1dfd8" />
+  </producedTypes>
+  <name>Расш1_РаботникиПользователей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Работники пользователей КМК</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9858e602-8bef-4580-832d-99e6ffbfbcc4">
+    <name>Работник</name>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+  </resources>
+  <dimensions uuid="d155c676-6a8c-4424-a486-b4fd3050a50e">
+    <name>ИмяПользователяИБ</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </dimensions>
+</mdclass:InformationRegister>

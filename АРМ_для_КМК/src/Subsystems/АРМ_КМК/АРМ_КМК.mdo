@@ -11,4 +11,10 @@
   <content>Catalog.Участки</content>
   <content>InformationRegister.ДопускиСотрудников</content>
   <content>CommonForm.МаркиКМК</content>
+  <synonym>
+    <key>ru</key>
+    <value>Производство КМК</value>
+  </synonym>
+  <content>CommonCommand.Расш1_ЖурналЗаказовВРаботу</content>
+  <content>InformationRegister.Расш1_РаботникиПользователей</content>
 </mdclass:Subsystem>

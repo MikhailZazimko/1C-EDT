@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="0ff47914-1017-48f0-b558-f1825e4d5b90">
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0ff47914-1017-48f0-b558-f1825e4d5b90" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension">
   <name>АРМ_для_КМК</name>
   <synonym>
     <key>ru</key>
@@ -63,4 +63,7 @@
   <enums>Enum.ВидыРасценок</enums>
   <informationRegisters>InformationRegister.ДопускиСотрудников</informationRegisters>
   <accumulationRegisters>AccumulationRegister.ВыработкаПоЗаказам</accumulationRegisters>
+  <commonModules>CommonModule.Расш1_ВыработкаСервер</commonModules>
+  <commonCommands>CommonCommand.Расш1_ЖурналЗаказовВРаботу</commonCommands>
+  <informationRegisters>InformationRegister.Расш1_РаботникиПользователей</informationRegisters>
 </mdclass:Configuration>

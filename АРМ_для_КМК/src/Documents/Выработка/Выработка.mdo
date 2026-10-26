@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7307ec19-797a-4e7c-8844-4d74eb9641cb">
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7307ec19-797a-4e7c-8844-4d74eb9641cb" xmlns:core="http://g5.1c.ru/v8/dt/mcore">
   <producedTypes>
     <objectType typeId="05e2ab0c-53aa-4adb-a6f2-698b90a0387c" valueTypeId="d07745e8-fedd-4757-9889-660ab0772c32"/>
     <refType typeId="7932c156-a1f5-4481-8f69-26942991b85a" valueTypeId="3a4683e5-d271-4580-8773-0a944ef2252c"/>
@@ -165,7 +165,7 @@
         <types>Number</types>
         <numberQualifiers>
           <precision>15</precision>
-          <scale>3</scale>
+          <scale>0</scale>
           <nonNegative>true</nonNegative>
         </numberQualifiers>
       </type>
@@ -180,7 +180,7 @@
         <types>Number</types>
         <numberQualifiers>
           <precision>15</precision>
-          <scale>3</scale>
+          <scale>0</scale>
           <nonNegative>true</nonNegative>
         </numberQualifiers>
       </type>
@@ -196,13 +196,33 @@
         <numberQualifiers>
           <precision>15</precision>
           <scale>3</scale>
-          <nonNegative>true</nonNegative>
+          <nonNegative>false</nonNegative>
         </numberQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="55182c87-f13d-4061-aa9f-a4f18441bb1e">
+      <name>Расш1_НомерСтрокиЗаказа</name>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>0</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="517df10e-f7ed-484a-a16f-f0a87e71cc2d">
+      <name>Расш1_Изделие</name>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
     </attributes>
   </tabularSections>
   <tabularSections uuid="dd229eee-2dcc-4936-a6b7-50fa05f350de">
