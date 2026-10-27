@@ -39,6 +39,7 @@
         },
         "ЕдиницаИзмерения": {
           "uuid": "fb1b7ef0-c96a-4057-af1b-8c5b0175e22b",
+          "check_type_in_extension": false,
           "types": [
             "CatalogRef.КлассификаторЕдиницИзмерения",
             "CatalogRef.ЕдиницыИзмерения"

@@ -55,16 +55,20 @@ def generate(api):
             child(attr, 'objectBelonging', 'Adopted')
             ext = child(attr, 'extension', **{'{' + api.XSI + '}type': 'mdclassExtension:BasicFeatureExtension'})
             child(ext, 'extendedConfigurationObject', 'Checked')
-            child(ext, 'type', 'Checked')
-            type_extension = child(ext, 'typeExtension')
-            for kind in attr_source.get('types', [attr_source.get('type')]):
-                t = child(type_extension, 'types')
-                child(t, 'state', 'Checked')
-                child(t, 'type', kind)
-            if attr_source.get('type') == 'Number':
-                qualifiers = child(type_extension, 'numberQualifiers')
-                for key in ['precision', 'scale']:
-                    child(qualifiers, key, attr_source[key])
+            # Единица измерения наследует тип основной УНФ. Контролируемый
+            # состав ссылочных типов потребовал бы заимствования справочников
+            # единиц, хотя собственных полей этих типов у расширения нет.
+            if attr_source.get('check_type_in_extension', True):
+                child(ext, 'type', 'Checked')
+                type_extension = child(ext, 'typeExtension')
+                for kind in attr_source.get('types', [attr_source.get('type')]):
+                    t = child(type_extension, 'types')
+                    child(t, 'state', 'Checked')
+                    child(t, 'type', kind)
+                if attr_source.get('type') == 'Number':
+                    qualifiers = child(type_extension, 'numberQualifiers')
+                    for key in ['precision', 'scale']:
+                        child(qualifiers, key, attr_source[key])
             child(attr, 'type')
         fields(ts, [('Расш1_ИзТехЛиста', 'Из технического листа', 'Boolean'),
                     ('Расш1_КлючТехЛиста', 'Источник расчётной строки', 'Key'),

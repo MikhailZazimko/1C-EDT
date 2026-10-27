@@ -23,6 +23,21 @@ def all_rights(role):
 
 
 class TechSheetMetadataTest(unittest.TestCase):
+    def test_metadata_reference_types_resolve_in_the_extension(self):
+        # Проверяем и контролируемые типы заимствованных реквизитов:
+        # платформа должна разрешить их ещё при загрузке расширения.
+        folders = {'CatalogRef': 'Catalogs', 'EnumRef': 'Enums'}
+        unresolved = []
+        for path in ROOT.rglob('*.mdo'):
+            for node in ET.parse(path).getroot().iter():
+                value = (node.text or '').strip()
+                prefix, separator, name = value.partition('.')
+                if separator and prefix in folders:
+                    target = ROOT / folders[prefix] / name / (name + '.mdo')
+                    if not target.is_file():
+                        unresolved.append(f'{path.relative_to(ROOT)}: {value}')
+        self.assertEqual(unresolved, [], '\n'.join(unresolved))
+
     def test_new_objects_are_registered_and_have_valid_references(self):
         config = ET.parse(ROOT / 'Configuration/Configuration.mdo').getroot()
         folders = {'catalogs': 'Catalogs', 'enums': 'Enums', 'roles': 'Roles',
@@ -161,7 +176,13 @@ class TechSheetMetadataTest(unittest.TestCase):
             for name, field in spec['attributes'].items():
                 self.assertEqual(fields[name].get('extendedConfigurationObject'), field['uuid'])
                 actual_types = [n.text for n in fields[name].findall('extension/typeExtension/types/type')]
-                self.assertEqual(actual_types, field.get('types', [field.get('type')]))
+                if field.get('check_type_in_extension', True):
+                    self.assertEqual(actual_types, field.get('types', [field.get('type')]))
+                else:
+                    self.assertEqual(fields[name].findtext('objectBelonging'), 'Adopted')
+                    self.assertIsNone(fields[name].find('extension/type'))
+                    self.assertIsNone(fields[name].find('extension/typeExtension'))
+                    self.assertEqual(list(fields[name].find('type')), [])
             for name in ['Расш1_ИзТехЛиста', 'Расш1_КлючТехЛиста', 'Расш1_СнимокТехЛиста']:
                 self.assertIsNone(fields[name].get('extendedConfigurationObject'))
         form = metadata.find('forms')
