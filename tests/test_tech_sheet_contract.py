@@ -176,21 +176,61 @@ class TechSheetMetadataTest(unittest.TestCase):
     def test_native_form_hooks_match_confirmed_unf_events_and_dynamic_actions(self):
         folder = ROOT / 'Catalogs/Спецификации/Forms/ФормаЭлемента'
         code = (folder / 'Module.bsl').read_text()
-        expected = {'ПриСозданииНаСервере': 2, 'ПриЧтенииНаСервере': 1,
-                    'ПередЗаписьюНаСервере': 3, 'ПослеЗаписиНаСервере': 2}
-        for name, count in expected.items():
-            hook = re.search(r'&НаСервере\s+&После\("' + name + r'"\)\s+Процедура \w+\(([^)]*)\)', code)
+        form = ET.parse(folder / 'Form.form').getroot()
+        expected = {'OnCreateAtServer': 2, 'OnReadAtServer': 1,
+                    'BeforeWriteAtServer': 3, 'AfterWriteAtServer': 2}
+        handlers = {h.findtext('event'): h for h in form.iter('handlers')}
+        self.assertEqual(set(handlers), set(expected))
+        for event, count in expected.items():
+            handler = handlers[event]
+            self.assertEqual(handler.get('{http://www.w3.org/2001/XMLSchema-instance}type'),
+                             'form:EventHandlerExtension')
+            self.assertEqual(handler.findtext('callType'), 'After')
+            name = handler.findtext('name')
+            hook = re.search(r'&НаСервере\s+Процедура ' + name + r'\(([^)]*)\)', code)
             self.assertIsNotNone(hook, name)
             self.assertEqual(len(hook.group(1).split(',')), count)
+        self.assertNotIn('&После(', code)  # Не вызывать обработчик повторно через аннотацию.
         helper = (ROOT / 'CommonModules/Расш1_ФормаСпецификацииТЛСервер/Module.bsl').read_text()
         for handler in re.findall(r'УстановитьДействие\("[^"]+", "([^"]+)"\)', helper):
             self.assertRegex(code, r'&НаКлиенте\s+(?:Асинх\s+)?Процедура ' + handler + r'\(')
         for command in re.findall(r'Новый Структура\("Имя,Заголовок", "([^"]+)"', helper):
             self.assertRegex(code, r'&НаКлиенте\s+(?:Асинх\s+)?Процедура ' + command + r'\(Команда\)')
-        # Не подменять всю типовую форму пустой разметкой и не терять её
-        # дополнительные колонки при конвертации главного реквизита.
-        self.assertFalse((folder / 'Form.form').exists())
+        # Не терять дополнительные колонки при конвертации главного реквизита.
         self.assertNotRegex(code, r'ЗначениеВРеквизитФормы\([^;]+, "Объект"\)')
+
+    def test_adopted_form_declares_managed_context_and_a_matching_base(self):
+        folder = ROOT / 'Catalogs/Спецификации/Forms/ФормаЭлемента'
+        form = ET.parse(folder / 'Form.form').getroot()
+        base = ET.parse(folder / 'BaseForm/Form.form').getroot()
+        xsi = '{http://www.w3.org/2001/XMLSchema-instance}type'
+        self.assertEqual(form.find('extInfo').get(xsi), 'form:CatalogFormExtInfo')
+        obj = next(a for a in form.findall('attributes') if a.findtext('name') == 'Объект')
+        self.assertEqual(obj.findtext('main'), 'true')
+        self.assertEqual(obj.findtext('valueType/types'), 'CatalogObject.Спецификации')
+        metadata = ET.parse(ROOT / 'Catalogs/Спецификации/Спецификации.mdo').getroot()
+        self.assertEqual(metadata.findtext('forms/extension/form'), 'Extended')
+        # Статические свойства/реквизиты исходного и расширенного контекста
+        # совпадают. В декларативной разнице остаются только события After.
+        for tree in [form, base]:
+            for node in tree.iter():
+                for handler in list(node.findall('handlers')):
+                    node.remove(handler)
+
+        def normalized(node):
+            return node.tag, tuple(sorted(node.attrib.items())), (node.text or '').strip(), tuple(map(normalized, node))
+
+        self.assertEqual(normalized(form), normalized(base))
+
+    def test_catalog_form_modules_have_a_form_context_file(self):
+        for path in ROOT.glob('Catalogs/*/Forms/*/Module.bsl'):
+            self.assertTrue(path.with_name('Form.form').is_file(), str(path))
+
+    def test_client_form_handlers_do_not_use_the_server_enumerations_manager(self):
+        for path in ROOT.glob('Catalogs/*/Forms/*/Module.bsl'):
+            code = path.read_text(encoding='utf-8-sig')
+            for handler in re.finditer(r'&НаКлиенте\s+(?:Асинх\s+)?(?:Процедура|Функция)\s+(\w+).*?(?:КонецПроцедуры|КонецФункции)', code, re.S):
+                self.assertNotRegex(handler.group(), r'\bПеречисления\s*\.', f'{path}: {handler.group(1)}')
 
     def test_native_subscription_resolves_to_a_server_handler(self):
         name = 'Расш1_СпецификацияТЛПередЗаписью'

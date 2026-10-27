@@ -1,7 +1,7 @@
 """Заимствование спецификации по подтверждённым UUID из основной УНФ.
 
-Вызывается основным генератором. Геометрия типовой формы наследуется; модуль
-расширения добавляет только собственные элементы через подтверждённые обработчики.
+Вызывается основным генератором. Контекст управляемой формы и BaseForm
+необходимы EDT для компиляции модуля. Элементы техлиста добавляются программно.
 """
 import json
 import xml.etree.ElementTree as ET
@@ -75,9 +75,9 @@ def generate(api):
     child(form, 'objectBelonging', 'Adopted')
     ext = child(form, 'extension', **{'{' + api.XSI + '}type': 'mdclassExtension:BasicFormExtension'})
     child(ext, 'extendedConfigurationObject', 'Checked')
-    # <form>Extended</form> не устанавливается: унаследованная форма не заменяется
-    # собственной разметкой. Меняется только Module.bsl, элементы добавляются им.
+    child(ext, 'form', 'Extended')
     save(api.SRC / 'Catalogs/Спецификации/Спецификации.mdo', catalog)
+    generate_form(api, contract['form'])
 
     enum_contract = source_contract['composition_row_types']
     name = enum_contract['name']
@@ -115,3 +115,43 @@ def generate(api):
                         [('catalogs', 'Catalog.Спецификации'), ('eventSubscriptions', 'EventSubscription.' + name),
                          ('enums', 'Enum.' + enum_contract['name'])]
                         + [('commonModules', 'CommonModule.' + n) for n in modules])
+
+
+def generate_form(api, contract):
+    """Описывает контекст и добавляет только четыре обработчика After.
+
+    Базовый и расширенный контексты имеют одинаковые реквизиты, свойства
+    и командную панель. Единственная декларативная разница — события.
+    Типовые элементы не удаляются и не заменяются статической разметкой.
+    """
+    import copy
+    child = api.child
+    base = ET.Element('{' + api.FORM + '}Form')
+    bar = child(base, 'autoCommandBar')
+    child(bar, 'name', 'ФормаКоманднаяПанель')
+    child(bar, 'id', -1)
+    child(bar, 'autoFill', 'true')
+    obj = child(base, 'attributes')
+    child(obj, 'name', 'Объект')
+    child(obj, 'id', 1)
+    api.value_type(obj, 'CatalogObject.Спецификации', 'valueType')
+    for flag in ['view', 'edit']:
+        child(child(obj, flag), 'common', 'true')
+    child(obj, 'main', 'true')
+    child(obj, 'savedData', 'true')
+    ext = child(base, 'extInfo', **{'{' + api.XSI + '}type': 'form:CatalogFormExtInfo'})
+    for event, handler_name in contract['handlers'].items():
+        parent = base if event == 'OnCreateAtServer' else ext
+        handler = child(parent, 'handlers')
+        child(handler, 'event', event)
+        child(handler, 'name', handler_name)
+    form = copy.deepcopy(base)
+    for parent in [form, form.find('extInfo')]:
+        for handler in parent.findall('handlers'):
+            event = handler.findtext('event')
+            handler.set('{' + api.XSI + '}type', 'form:EventHandlerExtension')
+            handler.find('name').text = 'Расш1_ТЛ' + contract['handlers'][event]
+            child(handler, 'callType', 'After')
+    path = api.SRC / 'Catalogs/Спецификации/Forms/ФормаЭлемента'
+    api.save(path / 'BaseForm/Form.form', base)
+    api.save(path / 'Form.form', form)
