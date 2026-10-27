@@ -178,6 +178,14 @@ class TechSheetMetadataTest(unittest.TestCase):
                 actual_types = [n.text for n in fields[name].findall('extension/typeExtension/types/type')]
                 if field.get('check_type_in_extension', True):
                     self.assertEqual(actual_types, field.get('types', [field.get('type')]))
+                    if field.get('type') == 'Number':
+                        qualifiers = fields[name].find('extension/typeExtension/numberQualifiers')
+                        self.assertIsNotNone(qualifiers)
+                        self.assertEqual({n.tag: n.text for n in qualifiers}, {
+                            'precision': str(field['precision']),
+                            'scale': str(field['scale']),
+                            'nonNegative': str(field['non_negative']).lower(),
+                        })
                 else:
                     self.assertEqual(fields[name].findtext('objectBelonging'), 'Adopted')
                     self.assertIsNone(fields[name].find('extension/type'))
@@ -193,6 +201,19 @@ class TechSheetMetadataTest(unittest.TestCase):
         material = actual_enum.find('enumValues')
         self.assertEqual(material.findtext('name'), 'Материал')
         self.assertEqual(material.get('extendedConfigurationObject'), enum['values']['Материал'])
+
+    def test_composition_quantity_keeps_the_confirmed_unf_number_restrictions(self):
+        # Параметры основной УНФ подтверждены скриншотом свойств Количество:
+        # Число(15,3), неотрицательное. Одного имени типа Number недостаточно
+        # для проверки совместимости заимствованного реквизита в платформе.
+        metadata = ET.parse(ROOT / 'Catalogs/Спецификации/Спецификации.mdo').getroot()
+        table = next(t for t in metadata.findall('tabularSections') if t.findtext('name') == 'Состав')
+        quantity = next(a for a in table.findall('attributes') if a.findtext('name') == 'Количество')
+        self.assertEqual(quantity.findtext('extension/type'), 'Checked')
+        qualifiers = quantity.find('extension/typeExtension/numberQualifiers')
+        self.assertEqual({n.tag: n.text for n in qualifiers}, {
+            'precision': '15', 'scale': '3', 'nonNegative': 'true',
+        })
 
     def test_native_form_hooks_match_confirmed_unf_events_and_dynamic_actions(self):
         folder = ROOT / 'Catalogs/Спецификации/Forms/ФормаЭлемента'

@@ -124,6 +124,7 @@
           <numberQualifiers>
             <precision>15</precision>
             <scale>3</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -143,6 +144,7 @@
           <numberQualifiers>
             <precision>15</precision>
             <scale>3</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -162,6 +164,7 @@
           <numberQualifiers>
             <precision>5</precision>
             <scale>0</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -244,6 +247,7 @@
           <numberQualifiers>
             <precision>10</precision>
             <scale>3</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -263,6 +267,7 @@
           <numberQualifiers>
             <precision>15</precision>
             <scale>3</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -282,6 +287,7 @@
           <numberQualifiers>
             <precision>15</precision>
             <scale>3</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>
@@ -301,6 +307,7 @@
           <numberQualifiers>
             <precision>5</precision>
             <scale>0</scale>
+            <nonNegative>true</nonNegative>
           </numberQualifiers>
         </typeExtension>
       </extension>

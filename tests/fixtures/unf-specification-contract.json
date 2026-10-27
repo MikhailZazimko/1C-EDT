@@ -1,5 +1,6 @@
 {
   "source": "Метаданные основной УНФ, предоставленные пользователем 27.10.2026; UUID не сгенерированы",
+  "numeric_qualifiers_source": "27.10.2026 пользователь подтвердил включение только признака Неотрицательное у всех семи числовых реквизитов; длина и точность не менялись. Параметры Состав.Количество также подтверждены скриншотом основной УНФ.",
   "catalog": {
     "name": "Спецификации",
     "uuid": "ac74fcc0-ae0c-4627-b192-2c6f4b6f0bd7",
@@ -49,19 +50,22 @@
           "uuid": "aa2925b1-e872-472a-9c7a-c63d7ad34f20",
           "type": "Number",
           "precision": 15,
-          "scale": 3
+          "scale": 3,
+          "non_negative": true
         },
         "КоличествоПродукции": {
           "uuid": "f2a3e7f0-3510-427d-9a8b-9bb10be870f0",
           "type": "Number",
           "precision": 15,
-          "scale": 3
+          "scale": 3,
+          "non_negative": true
         },
         "КлючСвязи": {
           "uuid": "58048237-5de0-4183-94b7-e6ce01c753f9",
           "type": "Number",
           "precision": 5,
-          "scale": 0
+          "scale": 0,
+          "non_negative": true
         }
       }
     },
@@ -77,25 +81,29 @@
           "uuid": "aa79410d-13e5-4e6c-87ff-b3b9278bab97",
           "type": "Number",
           "precision": 10,
-          "scale": 3
+          "scale": 3,
+          "non_negative": true
         },
         "Количество": {
           "uuid": "81ce5a55-1be5-45be-966f-f94fed0d6c69",
           "type": "Number",
           "precision": 15,
-          "scale": 3
+          "scale": 3,
+          "non_negative": true
         },
         "КоличествоПродукции": {
           "uuid": "2ddc270b-6d48-4463-9566-e9dcb00b98bb",
           "type": "Number",
           "precision": 15,
-          "scale": 3
+          "scale": 3,
+          "non_negative": true
         },
         "КлючСвязи": {
           "uuid": "9f8208a9-9e54-4176-832d-5bfce1e7f367",
           "type": "Number",
           "precision": 5,
-          "scale": 0
+          "scale": 0,
+          "non_negative": true
         }
       }
     }

@@ -69,6 +69,7 @@ def generate(api):
                     qualifiers = child(type_extension, 'numberQualifiers')
                     for key in ['precision', 'scale']:
                         child(qualifiers, key, attr_source[key])
+                    child(qualifiers, 'nonNegative', str(attr_source['non_negative']).lower())
             child(attr, 'type')
         fields(ts, [('Расш1_ИзТехЛиста', 'Из технического листа', 'Boolean'),
                     ('Расш1_КлючТехЛиста', 'Источник расчётной строки', 'Key'),
