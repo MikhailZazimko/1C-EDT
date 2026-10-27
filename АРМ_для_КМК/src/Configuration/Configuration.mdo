@@ -93,4 +93,5 @@
   <commonModules>CommonModule.Расш1_ФормаСпецификацииТЛСервер</commonModules>
   <commonModules>CommonModule.Расш1_СоставТЛРасчет</commonModules>
   <enums>Enum.ТипыСтрокСоставаСпецификации</enums>
+  <commonModules>CommonModule.Расш1_ПроверкаТЛ</commonModules>
 </mdclass:Configuration>

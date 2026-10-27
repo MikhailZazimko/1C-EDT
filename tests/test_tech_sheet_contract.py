@@ -130,6 +130,51 @@ class TechSheetMetadataTest(unittest.TestCase):
         for field in ['Номенклатура', 'Характеристика', 'Количество']:
             self.assertEqual(controls['РучныеМатериалы' + field].findtext('readOnly'), 'false')
 
+    def test_editable_input_fields_enable_keyboard_text_input(self):
+        for path in ROOT.glob('Catalogs/Расш1_*/Forms/*/Form.form'):
+            for field in ET.parse(path).getroot().iter('items'):
+                if field.findtext('type') == 'InputField' and field.findtext('readOnly') != 'true':
+                    self.assertEqual(field.findtext('extInfo/textEdit'), 'true',
+                                     f'{path}: {field.findtext("name")}')
+        form = ET.parse(FORM).getroot()
+        name = next(f for f in form.iter('items') if f.findtext('name') == 'Наименование')
+        self.assertEqual(name.findtext('readOnly'), 'false')
+        self.assertEqual(name.findall('handlers'), [])
+
+    def test_technology_card_uses_tabs_and_compact_groups(self):
+        form = ET.parse(FORM).getroot()
+        controls = {n.findtext('name'): n for n in form.iter('items')}
+        pages = controls['СтраницыТехЛиста']
+        self.assertEqual(pages.findtext('extInfo/pagesRepresentation'), 'TabsOnTop')
+        self.assertTrue(all(p.findtext('type') == 'Page' for p in pages.findall('items')))
+        header = controls['ШапкаТехЛиста']
+        self.assertEqual(header.findtext('extInfo/group'), 'Vertical')
+        self.assertEqual(header.findtext('verticalStretch'), 'false')
+        self.assertEqual(header.findtext('extInfo/representation'), 'None')
+        for group in form.iter('items'):
+            if group.findtext('type') == 'UsualGroup':
+                self.assertEqual(group.findtext('extInfo/representation'), 'None')
+        self.assertEqual(controls['СообщениеРасчета'].findtext('titleLocation'), 'None')
+        self.assertEqual(controls['СообщениеРасчета'].findtext('visible'), 'false')
+
+    def test_required_identity_is_checked_on_the_server_before_allocating_a_revision(self):
+        metadata = ET.parse(DIR / (NAME + '.mdo')).getroot()
+        description = next(a for a in metadata.findall('standardAttributes') if a.findtext('name') == 'Description')
+        product = next(a for a in metadata.findall('attributes') if a.findtext('name') == 'Номенклатура')
+        self.assertEqual(description.findtext('fillChecking'), 'ShowError')
+        self.assertEqual(product.findtext('fillChecking'), 'ShowError')
+        self.assertEqual(ET.parse(FORM).getroot().findtext('autoFillCheck'), 'true')
+        code = (ROOT / 'CommonModules/Расш1_ТехническиеЛистыСервер/Module.bsl').read_text()
+        write = re.search(r'Процедура ПередЗаписьюТехЛиста\(Объект\).*?КонецПроцедуры', code, re.S).group()
+        self.assertIn('ПроверитьОсновныеРеквизиты(Объект)', write)
+        self.assertLess(write.index('ПроверитьОсновныеРеквизиты(Объект)'), write.index('НазначитьРедакцию(Объект)'))
+        self.assertNotIn('ОбменДанными.Загрузка', write)
+        check = re.search(r'Процедура ПроверитьОсновныеРеквизиты\(Объект\).*?КонецПроцедуры', code, re.S).group()
+        self.assertIn('Если НЕ Объект.ЭтоНовый() И Объект.ПометкаУдаления Тогда', check)
+        self.assertIn('Объект.Номенклатура.ПолучитьОбъект()', check)
+        self.assertIn('Расш1_ПроверкаТЛ.ОшибкиОбязательныхПолей(Объект.Наименование', check)
+        self.assertIn('ВызватьИсключение СтрСоединить(Ошибки, Символы.ПС)', check)
+
     def test_read_only_roles_cannot_write_technology_or_revision_counter(self):
         for role in ['Оператор', 'Контролер']:
             rights = all_rights(role)

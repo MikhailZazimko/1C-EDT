@@ -57,102 +57,163 @@
     </dataPath>
     <type>InputField</type>
     <readOnly>false</readOnly>
+    <titleLocation>Left</titleLocation>
     <extInfo xsi:type="form:InputFieldExtInfo">
+      <textEdit>true</textEdit>
+      <textSize>Normal</textSize>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
+      <width>30</width>
+      <horizontalStretch>true</horizontalStretch>
     </extInfo>
   </items>
-  <items xsi:type="form:FormField">
-    <name>ВидОперации</name>
+  <items xsi:type="form:FormGroup">
+    <name>РеквизитыСтрока0</name>
     <id>4</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
-    <title>
-      <key>ru</key>
-      <value>Вид операции</value>
-    </title>
-    <dataPath xsi:type="form:DataPath">
-      <segments>Объект.ВидОперации</segments>
-    </dataPath>
-    <type>InputField</type>
-    <readOnly>false</readOnly>
-    <extInfo xsi:type="form:InputFieldExtInfo">
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>false</verticalStretch>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>AlwaysHorizontal</group>
+      <representation>None</representation>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
     </extInfo>
+    <items xsi:type="form:FormField">
+      <name>ВидОперации</name>
+      <id>5</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Вид операции</value>
+      </title>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.ВидОперации</segments>
+      </dataPath>
+      <type>InputField</type>
+      <readOnly>false</readOnly>
+      <titleLocation>Left</titleLocation>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <textEdit>true</textEdit>
+        <textSize>Normal</textSize>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <width>30</width>
+        <horizontalStretch>true</horizontalStretch>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Участок</name>
+      <id>6</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Участок по умолчанию</value>
+      </title>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.Участок</segments>
+      </dataPath>
+      <type>InputField</type>
+      <readOnly>false</readOnly>
+      <titleLocation>Left</titleLocation>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <textEdit>true</textEdit>
+        <textSize>Normal</textSize>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <width>30</width>
+        <horizontalStretch>true</horizontalStretch>
+      </extInfo>
+    </items>
   </items>
-  <items xsi:type="form:FormField">
-    <name>Участок</name>
-    <id>5</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
-    <title>
-      <key>ru</key>
-      <value>Участок по умолчанию</value>
-    </title>
-    <dataPath xsi:type="form:DataPath">
-      <segments>Объект.Участок</segments>
-    </dataPath>
-    <type>InputField</type>
-    <readOnly>false</readOnly>
-    <extInfo xsi:type="form:InputFieldExtInfo">
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-    </extInfo>
-  </items>
-  <items xsi:type="form:FormField">
-    <name>РаботаУНФ</name>
-    <id>6</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
-    <title>
-      <key>ru</key>
-      <value>Работа УНФ</value>
-    </title>
-    <dataPath xsi:type="form:DataPath">
-      <segments>Объект.РаботаУНФ</segments>
-    </dataPath>
-    <type>InputField</type>
-    <readOnly>false</readOnly>
-    <extInfo xsi:type="form:InputFieldExtInfo">
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-    </extInfo>
-  </items>
-  <items xsi:type="form:FormField">
-    <name>НормаВремениМин</name>
+  <items xsi:type="form:FormGroup">
+    <name>РеквизитыСтрока2</name>
     <id>7</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
-    <title>
-      <key>ru</key>
-      <value>Норма времени на изделие, мин</value>
-    </title>
-    <dataPath xsi:type="form:DataPath">
-      <segments>Объект.НормаВремениМин</segments>
-    </dataPath>
-    <type>InputField</type>
-    <readOnly>false</readOnly>
-    <extInfo xsi:type="form:InputFieldExtInfo">
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>false</verticalStretch>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>AlwaysHorizontal</group>
+      <representation>None</representation>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
     </extInfo>
+    <items xsi:type="form:FormField">
+      <name>РаботаУНФ</name>
+      <id>8</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Работа УНФ</value>
+      </title>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.РаботаУНФ</segments>
+      </dataPath>
+      <type>InputField</type>
+      <readOnly>false</readOnly>
+      <titleLocation>Left</titleLocation>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <textEdit>true</textEdit>
+        <textSize>Normal</textSize>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <width>30</width>
+        <horizontalStretch>true</horizontalStretch>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>НормаВремениМин</name>
+      <id>9</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Норма времени на изделие, мин</value>
+      </title>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.НормаВремениМин</segments>
+      </dataPath>
+      <type>InputField</type>
+      <readOnly>false</readOnly>
+      <titleLocation>Left</titleLocation>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <textEdit>true</textEdit>
+        <textSize>Normal</textSize>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <width>14</width>
+        <horizontalStretch>true</horizontalStretch>
+      </extInfo>
+    </items>
   </items>
   <items xsi:type="form:FormField">
     <name>Комментарий</name>
-    <id>8</id>
+    <id>10</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -167,10 +228,16 @@
     </dataPath>
     <type>InputField</type>
     <readOnly>false</readOnly>
+    <titleLocation>Left</titleLocation>
     <extInfo xsi:type="form:InputFieldExtInfo">
+      <textEdit>true</textEdit>
+      <textSize>Normal</textSize>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
+      <width>30</width>
+      <horizontalStretch>true</horizontalStretch>
       <multiLine>true</multiLine>
+      <height>3</height>
     </extInfo>
   </items>
   <handlers>
@@ -193,6 +260,8 @@
     <savedData>true</savedData>
   </attributes>
   <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <width>75</width>
   <enabled>true</enabled>
   <extInfo xsi:type="form:CatalogFormExtInfo" />
 </form:Form>

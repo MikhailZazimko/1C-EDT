@@ -35,6 +35,7 @@
     <type>
       <types>CatalogRef.Номенклатура</types>
     </type>
+    <fillChecking>ShowError</fillChecking>
   </attributes>
   <attributes uuid="b440b36a-7d90-59cc-a54a-7978adf68a1c">
     <name>Характеристика</name>
@@ -1630,6 +1631,10 @@
     </type>
     <multiLine>true</multiLine>
   </attributes>
+  <standardAttributes>
+    <name>Description</name>
+    <fillChecking>ShowError</fillChecking>
+  </standardAttributes>
   <tabularSections uuid="00f4f67e-6d3f-5194-bec2-449d1ac8c1a3">
     <producedTypes>
       <objectType typeId="6210f530-07d8-5878-8922-cb5a8b34896c" valueTypeId="28e06505-daa6-54ab-9ed4-758e21b9b4a7" />

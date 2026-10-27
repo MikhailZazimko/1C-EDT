@@ -107,6 +107,12 @@ def catalog(name, label, specs, tables=None, form=True, predefined=None):
             child(item, 'name', item_name)
             child(item, 'description', description)
     fields(node, specs, name)
+    if name == 'Расш1_ТехническиеЛисты':
+        description = child(node, 'standardAttributes')
+        child(description, 'name', 'Description')
+        child(description, 'fillChecking', 'ShowError')
+        product = next(a for a in node.findall('attributes') if a.findtext('name') == 'Номенклатура')
+        child(product, 'fillChecking', 'ShowError')
     for table, (caption, columns) in (tables or {}).items():
         ts = child(node, 'tabularSections', uuid=uid(name + '.' + table))
         types = child(ts, 'producedTypes')
@@ -160,13 +166,22 @@ class Card:
             child(node, 'defaultButton', 'true')
 
     def group(self, parent, name, caption, kind='UsualGroup', direction='Vertical'):
-        node = self.control(parent, 'FormGroup', name, caption)
+        node = self.control(parent, 'FormGroup', name, caption or None)
+        child(node, 'horizontalStretch', 'true')
+        child(node, 'verticalStretch', 'true' if kind == 'Pages' else 'false')
         child(node, 'type', kind)
         extname = {'UsualGroup': 'UsualGroupExtInfo', 'Page': 'PageGroupExtInfo', 'Pages': 'PagesGroupExtInfo'}[kind]
         ext = child(node, 'extInfo', **{'{' + XSI + '}type': 'form:' + extname})
         if kind != 'Pages':
             child(ext, 'group', direction)
+        if kind == 'UsualGroup':
+            child(ext, 'representation', 'None')
+            child(ext, 'united', 'true')
+            child(ext, 'throughAlign', 'Auto')
+        elif kind == 'Page':
             child(ext, 'showTitle', 'true')
+        else:
+            child(ext, 'pagesRepresentation', 'TabsOnTop')
         return node
 
     def field(self, parent, spec, table=None, readonly=False, event=True):
@@ -179,17 +194,38 @@ class Card:
         child(data, 'segments', path)
         child(node, 'type', 'CheckBoxField' if kind == 'Boolean' else 'InputField')
         child(node, 'readOnly', str(readonly).lower())
+        if not table:
+            child(node, 'titleLocation', 'Right' if kind == 'Boolean' else 'Left')
         ext = child(node, 'extInfo', **{'{' + XSI + '}type': 'form:' + ('CheckBoxFieldExtInfo' if kind == 'Boolean' else 'InputFieldExtInfo')})
         if kind != 'Boolean':
+            child(ext, 'textEdit', str(not readonly).lower())
+            child(ext, 'textSize', 'Normal')
             child(ext, 'autoMaxWidth', 'true')
             child(ext, 'autoMaxHeight', 'true')
+            if not table:
+                child(ext, 'width', 14 if kind in {'Number', 'Integer', 'SignedNumber'} else 30)
+                child(ext, 'horizontalStretch', 'true')
         if kind == 'Text':
             child(ext, 'multiLine', 'true')
-        if event and not readonly and self.full:
+            if not table:
+                child(ext, 'height', 3)
+        if event and not readonly and self.full and kind not in {'String', 'Text', 'Date'}:
             self.handler(node, 'OnChange', 'ПараметрыПриИзменении')
         if self.name == 'Расш1_ПравилаМатериаловТЛ' and name == 'ИсточникМатериала':
             self.handler(node, 'OnChange', 'ИсточникМатериалаПриИзменении')
         return node
+
+    def fields_grid(self, parent, name, specs, columns=2, readonly=False):
+        position = 0
+        for index, spec in enumerate(specs):
+            if spec[2] == 'Text':
+                self.field(parent, spec, readonly=readonly or spec[0] in schema.READONLY)
+                position = 0
+                continue
+            if position == 0:
+                row = self.group(parent, name + 'Строка' + str(index), '', direction='AlwaysHorizontal')
+            self.field(row, spec, readonly=readonly or spec[0] in schema.READONLY)
+            position = (position + 1) % columns
 
     @staticmethod
     def handler(parent, event, name):
@@ -205,6 +241,9 @@ class Card:
         child(table, 'changeRowOrder', 'false' if name == 'Материалы' else 'true')
         child(table, 'autoMaxWidth', 'true')
         child(table, 'autoMaxHeight', 'true')
+        child(table, 'horizontalStretch', 'true')
+        child(table, 'verticalStretch', 'true')
+        child(table, 'height', 8)
         bar = child(table, 'autoCommandBar')
         child(bar, 'name', name + 'КоманднаяПанель')
         child(bar, 'id', self.next_id)
@@ -245,6 +284,8 @@ class Card:
             for flag in ['view', 'edit']:
                 child(child(message, flag), 'common', 'true')
         child(self.root, 'group', 'Vertical')
+        child(self.root, 'autoFillCheck', 'true')
+        child(self.root, 'width', 110 if self.full else 75)
         child(self.root, 'enabled', 'true')
         ext = child(self.root, 'extInfo', **{'{' + XSI + '}type': 'form:CatalogFormExtInfo'})
         if self.full:
@@ -330,26 +371,30 @@ def generate():
     catalog('Расш1_ЦветаСтекол', 'Цвета стекол', [], form=False, predefined=colors)
 
     card = Card('Расш1_ТехническиеЛисты', 'Технический лист', full=True)
-    header = card.group(card.root, 'ШапкаТехЛиста', 'Технический лист', direction='Horizontal')
-    main = card.group(header, 'Основное', 'Изделие')
-    purpose = card.group(header, 'Назначение', 'Назначение')
-    card.field(main, ('Наименование', 'Наименование', 'String'))
+    header = card.group(card.root, 'ШапкаТехЛиста', '')
+    card.field(header, ('Наименование', 'Наименование', 'String'), event=False)
     primary = {'Номенклатура', 'Характеристика', 'Индивидуальный', 'БазовоеКоличество'}
     secondary = {'Заказ', 'НомерСтрокиЗаказа', 'Состояние', 'Редакция'}
-    for field in schema.IDENTITY:
-        if field[0] in primary | secondary:
-            card.field(main if field[0] in primary else purpose, field, readonly=field[0] in schema.READONLY)
+    identity = {s[0]: s for s in schema.IDENTITY}
+    card.fields_grid(header, 'ШапкаИзделие', [identity[n] for n in ['Номенклатура', 'Характеристика']])
+    card.fields_grid(header, 'Редакция', [identity[n] for n in ['БазовоеКоличество', 'Состояние', 'Редакция']], columns=3)
+    card.field(header, identity['Индивидуальный'])
+    purpose = card.group(header, 'Назначение', '')
+    card.fields_grid(purpose, 'Назначение', [identity[n] for n in ['Заказ', 'НомерСтрокиЗаказа']])
     message = card.control(card.root, 'FormField', 'СообщениеРасчета', '')
     path = child(message, 'dataPath', **{'{' + XSI + '}type': 'form:DataPath'})
     child(path, 'segments', 'СообщениеРасчета')
     child(message, 'type', 'LabelField')
+    child(message, 'titleLocation', 'None')
+    message.find('visible').text = 'false'
     child(message, 'readOnly', 'true')
-    child(message, 'extInfo', **{'{' + XSI + '}type': 'form:LabelFieldExtInfo'})
+    message_ext = child(message, 'extInfo', **{'{' + XSI + '}type': 'form:LabelFieldExtInfo'})
+    child(message_ext, 'autoMaxHeight', 'true')
+    child(message_ext, 'horizontalStretch', 'true')
     pages = card.group(card.root, 'СтраницыТехЛиста', '', 'Pages')
     for group, caption, fields_ in schema.SECTIONS:
         page = card.group(pages, 'Страница' + group, caption, 'Page')
-        for spec in fields_:
-            card.field(page, spec)
+        card.fields_grid(page, 'Параметры' + group, fields_)
         if group == 'Сверловка':
             card.table(page, 'Отверстия', *schema.TABLES['Отверстия'])
         if group == 'Печать':
@@ -359,20 +404,17 @@ def generate():
         page = card.group(pages, 'Страница' + table, caption, 'Page')
         card.table(page, table, caption, columns)
     info = card.group(pages, 'СведенияРедакции', 'Сведения о редакции', 'Page')
-    for field in schema.IDENTITY:
-        if field[0] not in primary | secondary | schema.HIDDEN:
-            card.field(info, field, readonly=True)
+    card.fields_grid(info, 'Сведения', [f for f in schema.IDENTITY if f[0] not in primary | secondary | schema.HIDDEN], readonly=True)
     card.finish()
     for name, caption, fields_ in [
             ('Расш1_ОперацииТЛ', 'Операция технического листа', schema.OPERATION_FIELDS),
             ('Расш1_ПравилаМатериаловТЛ', 'Правило материалов операции', schema.RULE_FIELDS)]:
         form = Card(name, caption)
         form.field(form.root, ('Наименование', 'Наименование', 'String'), event=False)
-        for spec in fields_:
-            form.field(form.root, spec, event=False)
+        form.fields_grid(form.root, 'Реквизиты', fields_)
         form.finish()
 
-    modules = ['Расш1_МатериалыТЛРасчет', 'Расш1_ТехническиеЛистыСервер', 'Расш1_ПечатьТЛСервер', 'Расш1_СхемаТЛСервер']
+    modules = ['Расш1_МатериалыТЛРасчет', 'Расш1_ТехническиеЛистыСервер', 'Расш1_ПечатьТЛСервер', 'Расш1_СхемаТЛСервер', 'Расш1_ПроверкаТЛ']
     for name in modules:
         module = ET.Element('{' + MD + '}CommonModule', {'uuid': uid('CommonModule.' + name)})
         child(module, 'name', name)
