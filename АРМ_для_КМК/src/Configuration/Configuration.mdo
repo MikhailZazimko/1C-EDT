@@ -94,4 +94,8 @@
   <commonModules>CommonModule.Расш1_СоставТЛРасчет</commonModules>
   <enums>Enum.ТипыСтрокСоставаСпецификации</enums>
   <commonModules>CommonModule.Расш1_ПроверкаТЛ</commonModules>
+  <commandGroups>CommandGroup.Расш1_КМКПроизводство</commandGroups>
+  <commandGroups>CommandGroup.Расш1_КМКТехническиеЛисты</commandGroups>
+  <commandGroups>CommandGroup.Расш1_КМКСправочники</commandGroups>
+  <commandGroups>CommandGroup.Расш1_КМКНастройки</commandGroups>
 </mdclass:Configuration>

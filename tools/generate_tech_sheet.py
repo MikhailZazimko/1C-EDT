@@ -456,6 +456,8 @@ def generate():
                     [('content', value) for tag, value in objects if tag == 'catalogs'])
     import generate_specification_integration
     generate_specification_integration.generate(sys.modules[__name__])
+    import generate_kmk_navigation
+    generate_kmk_navigation.generate(sys.modules[__name__])
 
 
 if __name__ == '__main__':

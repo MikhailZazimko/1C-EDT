@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommandGroup xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5801548c-365a-5932-a712-e265655d5098">
+  <name>Расш1_КМКПроизводство</name>
+  <synonym>
+    <key>ru</key>
+    <value>Производство</value>
+  </synonym>
+  <representation>Auto</representation>
+  <category>NavigationPanel</category>
+</mdclass:CommandGroup>
