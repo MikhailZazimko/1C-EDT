@@ -66,4 +66,7 @@
   <commonModules>CommonModule.Расш1_ВыработкаСервер</commonModules>
   <commonCommands>CommonCommand.Расш1_ЖурналЗаказовВРаботу</commonCommands>
   <informationRegisters>InformationRegister.Расш1_РаботникиПользователей</informationRegisters>
+  <commonModules>CommonModule.Расш1_ПечатьЭтикетокСервер</commonModules>
+  <commonTemplates>CommonTemplate.Расш1_Этикетка58х40</commonTemplates>
+  <informationRegisters>InformationRegister.Расш1_НумерацияЭтикеток</informationRegisters>
 </mdclass:Configuration>

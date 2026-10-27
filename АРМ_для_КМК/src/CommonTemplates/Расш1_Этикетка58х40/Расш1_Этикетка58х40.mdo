@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db032e25-ef0b-451a-8a2b-2b6f0c52db32">
+  <name>Расш1_Этикетка58х40</name>
+  <synonym><key>ru</key><value>Этикетка изделия 58 × 40 мм</value></synonym>
+  <templateType>SpreadsheetDocument</templateType>
+</mdclass:CommonTemplate>

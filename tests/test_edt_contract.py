@@ -67,13 +67,14 @@ class EDTContractTest(unittest.TestCase):
 
     def test_all_exported_xml_is_well_formed(self):
         for p in ROOT.rglob('*'):
-            if p.suffix in {'.mdo', '.form', '.rights', '.cmi'}:
+            if p.suffix in {'.mdo', '.form', '.rights', '.cmi', '.mxlx'}:
                 with self.subTest(path=str(p.relative_to(ROOT))):
                     ET.parse(p)
 
     def test_new_configuration_members_resolve(self):
         config = ET.parse(ROOT / 'Configuration/Configuration.mdo').getroot()
-        for tag, folder in [('commonModules', 'CommonModules'), ('commonCommands', 'CommonCommands'), ('informationRegisters', 'InformationRegisters')]:
+        for tag, folder in [('commonModules', 'CommonModules'), ('commonCommands', 'CommonCommands'),
+                            ('informationRegisters', 'InformationRegisters'), ('commonTemplates', 'CommonTemplates')]:
             for c in config.findall(tag):
                 name = c.text.split('.', 1)[1]
                 with self.subTest(name=name):
@@ -161,9 +162,59 @@ class EDTContractTest(unittest.TestCase):
         form = ET.parse(DOCUMENT).getroot()
         self.assertEqual(form.findtext('autoCommandBar/autoFill'), 'false')
         self.assertEqual({c.findtext('name') for c in form.findall('formCommands')},
-                         {'ЗаписатьПорцию', 'ЗаписатьИЗакрытьПорцию', 'ЗакрытьБезЗаписи'})
+                         {'ЗаписатьПорцию', 'ЗаписатьИЗакрытьПорцию', 'ЗакрытьБезЗаписи', 'ПечатьЭтикетки'})
         self.assertEqual(control(form, 'ЗаписатьИЗакрытьПорцию').findtext('defaultButton'), 'true')
         self.assertIn('BeforeWrite', [h.findtext('event') for h in form.findall('handlers')])
+
+    def test_label_button_is_on_the_same_bar_to_the_right_of_save_and_close(self):
+        form = ET.parse(DOCUMENT).getroot()
+        names = [c.findtext('name') for c in form.findall('autoCommandBar/items')]
+        self.assertEqual(names[names.index('ЗаписатьИЗакрытьПорцию') + 1], 'ПечатьЭтикетки')
+        self.assertEqual(control(form, 'ПечатьЭтикетки').findtext('title/value'), 'Печать этикетки')
+
+    def test_label_template_parameters_and_picture_references_resolve(self):
+        ns = {'s': 'http://v8.1c.ru/8.2/data/spreadsheet'}
+        template_dir = ROOT / 'CommonTemplates/Расш1_Этикетка58х40'
+        metadata = ET.parse(template_dir / 'Расш1_Этикетка58х40.mdo').getroot()
+        self.assertEqual(metadata.findtext('templateType'), 'SpreadsheetDocument')
+        sheet = ET.parse(template_dir / 'Template.mxlx').getroot()
+        self.assertEqual({p.text for p in sheet.findall('.//s:parameter', ns)},
+                         {'Работник', 'ДатаПечати', 'КодЭтикетки', 'Изделие'})
+        drawings = {d.findtext('s:id', namespaces=ns): d for d in sheet.findall('s:drawing', ns)}
+        named = {n.findtext('s:name', namespaces=ns): n for n in sheet.findall('s:namedItem', ns)}
+        picture = drawings[named['Штрихкод'].findtext('s:drawingID', namespaces=ns)]
+        area = named['Этикетка'].find('s:area', ns)
+        self.assertGreaterEqual(int(picture.findtext('s:beginRow', namespaces=ns)),
+                                int(area.findtext('s:beginRow', namespaces=ns)))
+        self.assertLessEqual(int(picture.findtext('s:endRow', namespaces=ns)),
+                             int(area.findtext('s:endRow', namespaces=ns)))
+        column_count = int(sheet.findtext('s:columns/s:size', namespaces=ns))
+        for merged in sheet.findall('s:merge', ns):
+            # MXLX stores the offset to the last column, not the number of columns.
+            self.assertLess(int(merged.findtext('s:c', namespaces=ns)) +
+                            int(merged.findtext('s:w', namespaces=ns)), column_count)
+        formats = sheet.findall('s:format', ns)
+        for tag in ['formatIndex', 'f']:
+            for index in sheet.findall('.//s:' + tag, ns):
+                self.assertLess(int(index.text), len(formats))
+
+    def test_label_counter_is_managed_and_available_to_production_roles(self):
+        name = 'Расш1_НумерацияЭтикеток'
+        register = ET.parse(ROOT / f'InformationRegisters/{name}/{name}.mdo').getroot()
+        self.assertEqual(register.findtext('dataLockControlMode'), 'Managed')
+        self.assertNotEqual(register.findtext('useStandardCommands'), 'true')
+        qualifiers = register.find('resources/type/numberQualifiers')
+        self.assertEqual(qualifiers.findtext('precision'), '12')
+        self.assertEqual(qualifiers.findtext('scale'), '0')
+        self.assertEqual(qualifiers.findtext('nonNegative'), 'true')
+        self.assertEqual(register.findtext('dimensions/name'), 'Серия')
+        for role in ['Оператор', 'Мастер', 'Контролер']:
+            rights = ET.parse(ROOT / f'Roles/{role}/Rights.rights').getroot()
+            obj = next(o for o in rights.findall('r:object', RIGHTS)
+                       if o.findtext('r:name', namespaces=RIGHTS) == 'InformationRegister.' + name)
+            enabled = {r.findtext('r:name', namespaces=RIGHTS) for r in obj.findall('r:right', RIGHTS)
+                       if r.findtext('r:value', namespaces=RIGHTS) == 'true'}
+            self.assertEqual(enabled, {'Read', 'Update'})
 
     def test_all_roles_can_record_production_but_only_master_edits_mapping(self):
         for name in ['Оператор', 'Мастер', 'Контролер']:

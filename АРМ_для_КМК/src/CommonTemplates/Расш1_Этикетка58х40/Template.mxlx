@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://v8.1c.ru/8.2/data/spreadsheet" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <languageSettings>
+    <currentLanguage>ru</currentLanguage>
+    <defaultLanguage>ru</defaultLanguage>
+    <languageInfo><id>ru</id><code>Русский</code><description>Русский</description></languageInfo>
+  </languageSettings>
+  <columns>
+    <size>2</size>
+    <columnsItem><index>0</index><column><formatIndex>1</formatIndex></column></columnsItem>
+    <columnsItem><index>1</index><column><formatIndex>1</formatIndex></column></columnsItem>
+  </columns>
+  <rowsItem>
+    <index>0</index>
+    <row>
+      <formatIndex>2</formatIndex>
+      <c><i>0</i><c><f>7</f><parameter>Работник</parameter></c></c>
+      <c><i>1</i><c><f>8</f><parameter>ДатаПечати</parameter></c></c>
+    </row>
+  </rowsItem>
+  <rowsItem><index>1</index><row><formatIndex>3</formatIndex><empty>true</empty></row></rowsItem>
+  <rowsItem><index>2</index><row><formatIndex>4</formatIndex><empty>true</empty></row></rowsItem>
+  <rowsItem>
+    <index>3</index>
+    <row><formatIndex>5</formatIndex><c><i>0</i><c><f>9</f><parameter>КодЭтикетки</parameter></c></c></row>
+  </rowsItem>
+  <rowsItem>
+    <index>4</index>
+    <row><formatIndex>6</formatIndex><c><i>0</i><c><f>10</f><parameter>Изделие</parameter></c></c></row>
+  </rowsItem>
+  <drawing>
+    <drawingType>Picture</drawingType>
+    <id>1</id>
+    <formatIndex>11</formatIndex>
+    <beginRow>2</beginRow><beginRowOffset>0</beginRowOffset>
+    <endRow>3</endRow><endRowOffset>0</endRowOffset>
+    <beginColumn>0</beginColumn><beginColumnOffset>0</beginColumnOffset>
+    <endColumn>2</endColumn><endColumnOffset>0</endColumnOffset>
+    <autoSize>false</autoSize><pictureSize>Stretch</pictureSize><zOrder>1</zOrder><pictureIndex>1</pictureIndex>
+  </drawing>
+  <templateMode>true</templateMode>
+  <defaultFormatIndex>0</defaultFormatIndex>
+  <height>5</height><vgRows>5</vgRows>
+  <merge><r>3</r><c>0</c><w>1</w></merge>
+  <merge><r>4</r><c>0</c><w>1</w></merge>
+  <namedItem xsi:type="NamedItemDrawing"><name>Штрихкод</name><drawingID>1</drawingID></namedItem>
+  <namedItem xsi:type="NamedItemCells">
+    <name>Этикетка</name>
+    <area><type>Rows</type><beginRow>0</beginRow><endRow>4</endRow><beginColumn>-1</beginColumn><endColumn>-1</endColumn></area>
+  </namedItem>
+  <line width="1" gap="false"><v8ui:style xsi:type="v8ui:SpreadsheetDocumentDrawingLineType">None</v8ui:style></line>
+  <font faceName="Arial" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+  <font faceName="Arial" height="6.5" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+  <font faceName="Arial" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+  <font faceName="Arial" height="7" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+  <format><font>3</font></format>
+  <format><width>102</width></format>
+  <format/>
+  <format/>
+  <format/>
+  <format/>
+  <format/>
+  <format><font>0</font><fillType>Parameter</fillType><textPlacement>Wrap</textPlacement><verticalAlignment>Center</verticalAlignment></format>
+  <format><font>1</font><fillType>Parameter</fillType><horizontalAlignment>Right</horizontalAlignment><verticalAlignment>Center</verticalAlignment></format>
+  <format><font>2</font><fillType>Parameter</fillType><horizontalAlignment>Center</horizontalAlignment></format>
+  <format><font>3</font><fillType>Parameter</fillType><textPlacement>Wrap</textPlacement><verticalAlignment>Center</verticalAlignment></format>
+  <format><drawingBorder>0</drawingBorder></format>
+  <picture><index>0</index><picture/></picture>
+</document>

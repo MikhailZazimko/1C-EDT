@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0a91957-7d5f-4b35-9396-f4858fb6e569">
+  <producedTypes>
+    <selectionType typeId="bd9c2894-9bda-4aa8-b615-d07518cb0951" valueTypeId="aae02a07-0916-45d0-b586-d1db5ad579b2" />
+    <listType typeId="8bf8dfbc-9625-4388-947e-f5c0339c0c24" valueTypeId="4f45ad16-f1a0-45fc-9d67-1f86791ff3eb" />
+    <managerType typeId="17efbb7a-5980-4d01-b4ee-31aa4158f989" valueTypeId="ff912929-feba-4c1c-b9e6-03a86d7bb4a2" />
+    <recordSetType typeId="21049a90-eac5-4fdc-873c-6384d4434863" valueTypeId="c40a5d01-07ba-4e92-8d50-f440279c0fd4" />
+    <recordKeyType typeId="f229cb5a-9bf7-4e6a-867a-4d4787b7c014" valueTypeId="ac887e1c-2852-49e2-8687-ca5114bc3603" />
+    <recordType typeId="d3339cd5-c1ec-4ff4-bb2a-68f3ccca76ad" valueTypeId="93e5952b-6317-4cc6-b8a3-fe469c487119" />
+    <recordManagerType typeId="211b3a70-1556-4475-8799-b3607df4a76a" valueTypeId="639c663e-b6bd-405a-a3a5-ffe9ac992c08" />
+  </producedTypes>
+  <name>Расш1_НумерацияЭтикеток</name>
+  <synonym><key>ru</key><value>Нумерация этикеток КМК</value></synonym>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="58e2dcc3-7791-47d7-a122-ef9f704db911">
+    <name>ПоследнийНомер</name>
+    <type><types>Number</types><numberQualifiers><precision>12</precision><scale>0</scale><nonNegative>true</nonNegative></numberQualifiers></type>
+  </resources>
+  <dimensions uuid="22597dda-11ad-403f-bf52-344006240136">
+    <name>Серия</name>
+    <type><types>String</types><stringQualifiers><length>3</length></stringQualifiers></type>
+  </dimensions>
+</mdclass:InformationRegister>

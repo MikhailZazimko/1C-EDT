@@ -358,6 +358,16 @@
       <defaultButton>true</defaultButton>
     </items>
     <items xsi:type="form:Button">
+      <name>ПечатьЭтикетки</name>
+      <id>21</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible><common>true</common></userVisible>
+      <title><key>ru</key><value>Печать этикетки</value></title>
+      <commandName>Form.Command.ПечатьЭтикетки</commandName>
+      <representation>Auto</representation>
+    </items>
+    <items xsi:type="form:Button">
       <name>ЗаписатьПорцию</name>
       <id>19</id>
       <visible>true</visible>
@@ -435,6 +445,15 @@
       <handler>
         <name>ЗакрытьБезЗаписи</name>
       </handler>
+    </action>
+  </formCommands>
+  <formCommands>
+    <name>ПечатьЭтикетки</name>
+    <title><key>ru</key><value>Печать этикетки</value></title>
+    <id>4</id>
+    <use><common>true</common></use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler><name>ПечатьЭтикетки</name></handler>
     </action>
   </formCommands>
   <handlers>
