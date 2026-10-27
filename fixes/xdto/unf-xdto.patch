@@ -1,0 +1,246 @@
+--- УНФ_Демо_КМК/src/XDTOPackages/MobileClientIntegration/Package.xdto
++++ УНФ_Демо_КМК/src/XDTOPackages/MobileClientIntegration/Package.xdto
+@@ -193,7 +193,7 @@
+ 		</property>
+ 	</objectType>
+ 	<objectType xmlns:d2p1="http://www.1c.ru/SB/MobileExchange" name="Company" base="d2p1:Object">
+-		<property name="name" type="xs:string" nillable="true"/>
++		<property name="name" type="xs:string" nillable="true" lowerBound="1"/>
+ 	</objectType>
+ 	<objectType xmlns:d2p1="http://www.1c.ru/SB/MobileExchange" name="CashFlowItems" base="d2p1:Object">
+ 		<property name="DeletionMark" type="xs:boolean" lowerBound="0" nillable="true"/>
+--- УНФ_Демо_КМК/src/XDTOPackages/ОтправкаРеестровПВСО/Package.xdto
++++ УНФ_Демо_КМК/src/XDTOPackages/ОтправкаРеестровПВСО/Package.xdto
+@@ -27,13 +27,13 @@
+ 				<typeDef xsi:type="ObjectType">
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="BATCH_NO" type="d6p1:BatchNoType"/>
+ 					<property name="TYPE_INFO">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property name="RECALC_REASON_CODE" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -43,7 +43,7 @@
+ 						</typeDef>
+ 					</property>
+ 					<property name="DOC_TYPE">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger2" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -75,7 +75,7 @@
+ 						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilstring" variety="Atomic" maxLength="60"/>
+ 					</property>
+ 					<property name="RESIDENT_FLAG">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+@@ -143,13 +143,13 @@
+ 						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilstring" variety="Atomic" maxLength="30"/>
+ 					</property>
+ 					<property name="OWNER_FLAG">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property name="PAYMENT_TYPE">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+@@ -230,7 +230,7 @@
+ 						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilstring" variety="Atomic" maxLength="255"/>
+ 					</property>
+ 					<property name="EMPL_FLAG">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>
+@@ -257,14 +257,14 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="BASE_AVG_SAL" type="d6p1:fssnildecimal" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="AVG_SAL" type="d6p1:fssnildecimal" lowerBound="0" nillable="true"/>
+ 					<property name="MULTPATR" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="BASE_AVG_DAILY_SAL" type="d6p1:fssnildecimal" lowerBound="0" nillable="true"/>
+ 					<property name="YEAR_CHANGE_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -296,13 +296,13 @@
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="KF_SHORT_DAY" type="d6p1:fssnildecimalK" lowerBound="0" nillable="true"/>
+ 					<property name="LIVE_COND_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property name="LIVE_COND" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -316,20 +316,20 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="LN_CODE" type="d6p1:LnCodeType" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="PREV_LN_CODE" type="d6p1:LnCodeType" lowerBound="0" nillable="true"/>
+ 					<property name="LN_TYPE" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 							<enumeration>2</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property name="PRIMARY_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+ 					</property>
+ 					<property name="DUPLICATE_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -345,7 +345,7 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="LPU_OGRN" type="d6p1:ogrn" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="BIRTHDAY" type="d6p1:fssnildate"/>
+ 					<property name="GENDER">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -422,7 +422,7 @@
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="SERV2_DAYS" type="d6p1:fssnilinteger3" lowerBound="0" nillable="true"/>
+ 					<property name="PREGN12W_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+@@ -446,7 +446,7 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="MSE_DT2" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="MSE_DT3" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property name="MSE_INVALID_GROUP" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -533,7 +533,7 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="CALC_CONDITION2" type="d6p1:CalcConditionType" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="CALC_CONDITION3" type="d6p1:CalcConditionType" lowerBound="0" nillable="true"/>
+ 					<property name="CODE_NUCLEAR" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -543,7 +543,7 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="FORM1_DT" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="RETURN_DATE_EMPL" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property name="FSS_PAYMENT_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -556,7 +556,7 @@
+ 							<property name="PERIOD_EXCL" lowerBound="0" upperBound="-1" nillable="true">
+ 								<typeDef xsi:type="ObjectType">
+ 									<property name="TYPE_EXCL" lowerBound="0" nillable="true">
+-										<typeDef xmlns:d11p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d11p1:fssnilinteger1" variety="Atomic">
++										<typeDef xmlns:d11p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 											<enumeration>1</enumeration>
+ 											<enumeration>2</enumeration>
+ 											<enumeration>3</enumeration>
+@@ -610,7 +610,7 @@
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="O_CERT_DT" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="CHILD_SER" type="d6p1:fssnilinteger2" lowerBound="0" nillable="true"/>
+ 					<property name="MH_OUT" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -626,7 +626,7 @@
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="HOLID_CH_ORD_DT" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property name="HOLID_TYPE" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -644,7 +644,7 @@
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="REF_NPAY_OTHER_DT" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property name="WARD_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 						</typeDef>
+@@ -682,7 +682,7 @@
+ 					</property>
+ 					<property xmlns:d6p1="http://pilot.fss.ru/1.7" name="REF_12WEEK_DT" type="d6p1:fssnildate" lowerBound="0" nillable="true"/>
+ 					<property name="REASON_EMPL" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>0</enumeration>
+ 						</typeDef>
+@@ -702,7 +702,7 @@
+ 						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilstring" variety="Atomic" maxLength="300"/>
+ 					</property>
+ 					<property name="MOBIL_FLAG" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>
+@@ -724,7 +724,7 @@
+ 						</typeDef>
+ 					</property>
+ 					<property name="LOCATION_CODE" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>1</enumeration>
+ 							<enumeration>2</enumeration>
+ 							<enumeration>3</enumeration>
+@@ -733,7 +733,7 @@
+ 						</typeDef>
+ 					</property>
+ 					<property name="IS_DELIVERY" lowerBound="0" nillable="true">
+-						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="d7p1:fssnilinteger1" variety="Atomic">
++						<typeDef xmlns:d7p1="http://pilot.fss.ru/1.7" xsi:type="ValueType" base="xs:integer" variety="Atomic">
+ 							<enumeration>0</enumeration>
+ 							<enumeration>1</enumeration>
+ 						</typeDef>

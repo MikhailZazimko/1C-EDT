@@ -1,0 +1,415 @@
+{
+  "note": "Копии для проверки в основной УНФ; EDT/платформа в облаке отсутствуют.",
+  "packages": [
+    {
+      "name": "MobileClientIntegration",
+      "original_sha256": "cc9d3b0f6d3b06e589056531ddfa685396839806d5332a938048a1d9bb693a8e",
+      "fixed_sha256": "35bf5e98687f8a1ef7687af7fdd0485828e4da65bf3748615b201bb41c1be35d",
+      "changes": [
+        {
+          "offset": 12822,
+          "old": "<property name=\"name\" type=\"xs:string\" nillable=\"true\"/>",
+          "new": "<property name=\"name\" type=\"xs:string\" nillable=\"true\" lowerBound=\"1\"/>",
+          "property": "Company.name",
+          "line": 196,
+          "inherited_lower_bound": 0,
+          "effective_lower_bound": 1
+        }
+      ]
+    },
+    {
+      "name": "ОтправкаРеестровПВСО",
+      "original_sha256": "d0da2c06f950b0bb632c6bdd53f1ec9633d414d27b7c2ab038642ff05d3015a2",
+      "fixed_sha256": "f7c178b30a05cbd381cb028551ee246048dc7c18de8c7331b044c5d1412cdf04",
+      "changes": [
+        {
+          "offset": 2324,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/TYPE_INFO",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 30
+        },
+        {
+          "offset": 2627,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/RECALC_REASON_CODE",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "inherited_total_digits": 1,
+          "line": 36
+        },
+        {
+          "offset": 3037,
+          "old": "base=\"d7p1:fssnilinteger2\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/DOC_TYPE",
+          "base": "d7p1:fssnilinteger2",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "13",
+            "76"
+          ],
+          "inherited_total_digits": 2,
+          "line": 46
+        },
+        {
+          "offset": 4695,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/RESIDENT_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "inherited_total_digits": 1,
+          "line": 78
+        },
+        {
+          "offset": 9249,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/OWNER_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 146
+        },
+        {
+          "offset": 9515,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/PAYMENT_TYPE",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "inherited_total_digits": 1,
+          "line": 152
+        },
+        {
+          "offset": 15032,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/EMPL_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 233
+        },
+        {
+          "offset": 17225,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/MULTPATR",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 260
+        },
+        {
+          "offset": 17664,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/YEAR_CHANGE_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 267
+        },
+        {
+          "offset": 19633,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/LIVE_COND_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2"
+          ],
+          "inherited_total_digits": 1,
+          "line": 299
+        },
+        {
+          "offset": 19927,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/LIVE_COND",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "inherited_total_digits": 1,
+          "line": 305
+        },
+        {
+          "offset": 21070,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/LN_TYPE",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0",
+            "2"
+          ],
+          "inherited_total_digits": 1,
+          "line": 319
+        },
+        {
+          "offset": 21404,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/PRIMARY_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 326
+        },
+        {
+          "offset": 21703,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/DUPLICATE_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 332
+        },
+        {
+          "offset": 22861,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/GENDER",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 348
+        },
+        {
+          "offset": 27461,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/PREGN12W_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1",
+            "2"
+          ],
+          "inherited_total_digits": 1,
+          "line": 425
+        },
+        {
+          "offset": 29059,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/MSE_INVALID_GROUP",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "9"
+          ],
+          "inherited_total_digits": 1,
+          "line": 449
+        },
+        {
+          "offset": 35677,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/CODE_NUCLEAR",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "inherited_total_digits": 1,
+          "line": 536
+        },
+        {
+          "offset": 36310,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/FSS_PAYMENT_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 546
+        },
+        {
+          "offset": 37232,
+          "old": "base=\"d11p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/PERIODS_EXCL/PERIOD_EXCL/TYPE_EXCL",
+          "base": "d11p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "inherited_total_digits": 1,
+          "line": 559
+        },
+        {
+          "offset": 40982,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/MH_OUT",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 613
+        },
+        {
+          "offset": 42235,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/HOLID_TYPE",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "inherited_total_digits": 1,
+          "line": 629
+        },
+        {
+          "offset": 43466,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/WARD_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2"
+          ],
+          "inherited_total_digits": 1,
+          "line": 647
+        },
+        {
+          "offset": 46540,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/REASON_EMPL",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "0"
+          ],
+          "inherited_total_digits": 1,
+          "line": 685
+        },
+        {
+          "offset": 47769,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/MOBIL_FLAG",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 705
+        },
+        {
+          "offset": 49247,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/LOCATION_CODE",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "inherited_total_digits": 1,
+          "line": 727
+        },
+        {
+          "offset": 49654,
+          "old": "base=\"d7p1:fssnilinteger1\"",
+          "new": "base=\"xs:integer\"",
+          "property": "ROWSET/ROW/IS_DELIVERY",
+          "base": "d7p1:fssnilinteger1",
+          "codes": [
+            "0",
+            "1"
+          ],
+          "inherited_total_digits": 1,
+          "line": 736
+        }
+      ]
+    }
+  ]
+}

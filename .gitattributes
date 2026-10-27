@@ -1,0 +1,2 @@
+# В unified diff пробел перед табуляцией — обязательный префикс строки контекста.
+fixes/xdto/*.patch whitespace=trailing-space,cr-at-eol,-space-before-tab
