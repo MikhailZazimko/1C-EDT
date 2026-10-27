@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="57a6676e-cc9b-5616-af52-d1407af14787">
+  <producedTypes>
+    <refType typeId="89bac72a-f914-541f-9536-75226e8004bd" valueTypeId="90884ad0-e44a-58e9-9085-ddf2299af8db" />
+    <listType typeId="bdb62d04-19fd-5944-9534-175b5f89e06c" valueTypeId="42551c1a-9e43-531c-b7ae-b4779a400b91" />
+    <managerType typeId="cdd2ba7f-7d7b-5e2d-85d7-737b98292f44" valueTypeId="c241fd46-b970-54f6-b592-85cd092c09ff" />
+  </producedTypes>
+  <name>Расш1_СостоянияТЛ</name>
+  <enumValues uuid="974c0bff-7555-5d4c-b2c4-59284813db5f">
+    <name>Черновик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Черновик</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="a2a93c0a-7a73-5fed-ba83-a3197ce5e2b4">
+    <name>Утвержден</name>
+    <synonym>
+      <key>ru</key>
+      <value>Утверждён</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

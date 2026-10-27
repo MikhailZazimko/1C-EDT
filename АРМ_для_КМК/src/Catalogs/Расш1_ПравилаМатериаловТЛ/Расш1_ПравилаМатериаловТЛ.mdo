@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4eac4124-79f4-5aab-848b-b911bcd4acc8">
+  <producedTypes>
+    <objectType typeId="08647569-4468-5b26-97d6-6490b50e414e" valueTypeId="ab2887af-1ced-5f6f-b069-0c72f3845f46" />
+    <refType typeId="8cca34aa-a1ff-52d1-b6b8-540efb6c2ebb" valueTypeId="a48b7c7e-c1f0-5fa4-8ba2-29c6345af0a6" />
+    <selectionType typeId="381c4aaf-10ef-5f24-997a-6918ca2f102e" valueTypeId="7f3c3e1d-8ca1-569f-a71d-c51885c72704" />
+    <listType typeId="0aa75540-3300-5c5b-a1be-455cac17bacb" valueTypeId="919bf30f-5467-5b54-bc47-d61a6a9fc74d" />
+    <managerType typeId="8c59f2c7-6323-57e8-9430-20ec1adf8ffe" valueTypeId="566fc2bc-4b59-5bdf-9e49-1a11056ae661" />
+  </producedTypes>
+  <name>Расш1_ПравилаМатериаловТЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Правила материалов операций</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <defaultObjectForm>Catalog.Расш1_ПравилаМатериаловТЛ.Form.ФормаЭлемента</defaultObjectForm>
+  <forms uuid="940902e1-1c71-517c-a73a-336521c4f5e9">
+    <name>ФормаЭлемента</name>
+  </forms>
+  <attributes uuid="088ad4e7-5c6c-5b4c-940a-c24cef137270">
+    <name>Использовать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правило активно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="ba1e0691-1ad7-59b6-beaf-6815a0f5b03b">
+    <name>Операция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Расш1_ОперацииТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="78ef4993-2fff-51d2-9fdf-e794ae0a82fc">
+    <name>ИсточникМатериала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник материала</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ИсточникиМатериаловТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="19b8d500-a6b1-5eaa-a223-34c8a92c4e5d">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фиксированный материал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+  </attributes>
+  <attributes uuid="e55ec8e7-1715-5807-a470-9ddabc821a34">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+  </attributes>
+  <attributes uuid="63426ad7-d3e5-590c-913f-6e128b65de24">
+    <name>СпособРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ расчёта</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_РасчетМатериаловТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="c99d55e9-33b2-536e-a6b8-e2f27758a8fc">
+    <name>Норма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Норма в базовой единице материала</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="fc1f99d4-df30-53ea-b42d-a680f49bc99f">
+    <name>ПроцентПотерь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительный расход, %</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="cbe71eba-71dc-5c7e-ad3c-fcaf0e043391">
+    <name>ТолщинаОтМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Толщина стекла от, мм (0 — без ограничения)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="f7e1091a-8aa1-541f-9183-5d15b5ed76bc">
+    <name>ТолщинаДоМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Толщина стекла до, мм (0 — без ограничения)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="759789db-7c95-5e5b-b639-999cd4433b4a">
+    <name>ЦветСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Для цвета стекла (пусто — любой)</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Расш1_ЦветаСтекол</types>
+    </type>
+  </attributes>
+  <attributes uuid="aade1866-f276-5aa8-a5c9-6937c5f27aba">
+    <name>ВидСлоя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Для вида слоя (пусто — любой)</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ВидыСлоевТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="d1a7b3e2-04bb-54d7-8fef-14b475075b28">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий к норме и единице измерения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+</mdclass:Catalog>

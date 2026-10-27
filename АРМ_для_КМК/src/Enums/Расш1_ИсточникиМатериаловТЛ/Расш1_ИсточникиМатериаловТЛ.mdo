@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f37bfc79-fa00-5903-8b62-3a0451c32905">
+  <producedTypes>
+    <refType typeId="7639bc62-b9fd-5445-b8fd-d98006cdd2de" valueTypeId="b1ecefd3-60bc-52f3-87a7-b6dd1666f6a8" />
+    <listType typeId="b195fa1b-dac0-50db-8a8a-19e428ba5abf" valueTypeId="a1828e1e-4a41-5bfb-ac26-9612ffa3ec59" />
+    <managerType typeId="99ec2d36-48ac-5c76-b1da-5419d97d21c1" valueTypeId="ffd7d8ef-c1a0-55e3-8eb3-c000b043a321" />
+  </producedTypes>
+  <name>Расш1_ИсточникиМатериаловТЛ</name>
+  <enumValues uuid="83fcbf08-0620-53fb-9d50-d8ca70489ebf">
+    <name>Фиксированный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Указанный в правиле материал</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="85feaa37-2780-5b0c-9a7a-d36f3ab17531">
+    <name>Стекло</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стекло-заготовка из техлиста</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="c817a044-1d33-5ab1-aea3-69a10c121748">
+    <name>Краска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Материал слоя печати</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="ded34c2b-0947-507c-aaf9-f0e13a7377d8">
+    <name>Коннектор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коннектор из техлиста</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

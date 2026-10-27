@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6fdb712e-6c56-5bd3-91f5-e9d3a67f7a8b">
+  <producedTypes>
+    <refType typeId="bbd65bd0-4c71-5f3a-ace9-72e374b3280e" valueTypeId="b9d0042c-0c51-5dd6-ba49-2e8de07b7e70" />
+    <listType typeId="43597b43-63f6-5ff4-9d55-33bc856b10b1" valueTypeId="2203e032-e8c0-5ed1-9ece-327e2d1e7f0c" />
+    <managerType typeId="af44796c-6ae8-54bf-a8b7-14bb735aab6c" valueTypeId="1fab4a54-37a1-5d0e-aab6-0b8e2536a367" />
+  </producedTypes>
+  <name>Расш1_ТипыСтеколТЛ</name>
+  <enumValues uuid="6c73580f-5163-5536-b2cf-0cbee98ec9a5">
+    <name>Лобовое</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лобовое</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="d63dbfaf-401f-58f3-ba93-a58108231255">
+    <name>Заднее</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заднее</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="1c202a6b-f17c-59b6-9190-7028cd22ccee">
+    <name>Боковое</name>
+    <synonym>
+      <key>ru</key>
+      <value>Боковое</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="5168090b-8368-5a9c-aeb1-0d4df80e779c">
+    <name>Форточка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форточка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="66b2e846-2beb-519e-a78a-3fdcb675816a">
+    <name>Другое</name>
+    <synonym>
+      <key>ru</key>
+      <value>Другое</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

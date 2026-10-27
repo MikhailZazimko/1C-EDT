@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="514cd8de-5d2f-5c65-a6b1-ff6f075879f3">
+  <producedTypes>
+    <objectType typeId="21aaca1f-57e0-5f39-93ec-72dedeab9579" valueTypeId="1b9dbc83-2469-5e0d-a516-bf300c370a4f" />
+    <refType typeId="f8670bba-3b67-5fa6-b9e1-a2b7dfd40be2" valueTypeId="ff46d924-6495-5673-b540-77676e529c00" />
+    <selectionType typeId="3d65cedd-ccda-5cd6-a1c4-526d7f560e0c" valueTypeId="19f3d793-6b98-5e5b-b9ea-48617a1b8360" />
+    <listType typeId="91083450-f6ce-576b-8dc2-9e8fa0651764" valueTypeId="9d05ef19-add3-503f-b370-1d437649d67a" />
+    <managerType typeId="c0328fc9-3c45-5f3e-bd9f-de30b30aeee6" valueTypeId="7e2ee220-ff3b-5272-8623-a5098ed079ca" />
+  </producedTypes>
+  <name>Расш1_ОперацииТЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Операции технических листов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <defaultObjectForm>Catalog.Расш1_ОперацииТЛ.Form.ФормаЭлемента</defaultObjectForm>
+  <forms uuid="186a6692-69ec-5aca-802f-8d6aa9cfd2d0">
+    <name>ФормаЭлемента</name>
+  </forms>
+  <predefined>
+    <items id="88c04953-7c35-5dca-9763-a9cae7075768">
+      <name>Резка</name>
+      <description>Резка</description>
+    </items>
+    <items id="bc9677b3-967b-5328-b44a-6065795de621">
+      <name>ГАР</name>
+      <description>ГАР</description>
+    </items>
+    <items id="c6cf989d-8034-5c07-9012-22ca6ed8e244">
+      <name>Кромка</name>
+      <description>Обработка кромки</description>
+    </items>
+    <items id="83fe79f5-2d54-533c-b635-54b590536dd7">
+      <name>Сверловка</name>
+      <description>Сверловка</description>
+    </items>
+    <items id="2740e0e2-4cb8-53ba-a669-692b43bcb112">
+      <name>Маркировка</name>
+      <description>Маркировка</description>
+    </items>
+    <items id="29be0d30-ec88-5973-9ae1-99508931f72c">
+      <name>Печать</name>
+      <description>Печать</description>
+    </items>
+    <items id="38119e84-c155-5f5d-8081-c1a37f05647b">
+      <name>Закалка</name>
+      <description>Закалка</description>
+    </items>
+    <items id="c25f348d-7997-5df5-9034-20cb31bb8b85">
+      <name>Пайка</name>
+      <description>Пайка</description>
+    </items>
+    <items id="daf1c4f3-7b81-5825-aed9-63e68b750cd2">
+      <name>Контроль</name>
+      <description>Контроль</description>
+    </items>
+    <items id="7b7490bf-705b-51f4-b21d-8f9ce603dc81">
+      <name>Упаковка</name>
+      <description>Упаковка</description>
+    </items>
+  </predefined>
+  <attributes uuid="193b1da2-f97c-5ca3-91cd-e2e5a4fa8135">
+    <name>ВидОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид операции</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ВидыОперацийТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="9f1a342c-a584-571f-ab70-bbd77a4f6ef0">
+    <name>Участок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участок по умолчанию</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Участки</types>
+    </type>
+  </attributes>
+  <attributes uuid="335c57ae-6f57-5fde-b934-895ce018b672">
+    <name>РаботаУНФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Работа УНФ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+  </attributes>
+  <attributes uuid="73da94a0-ea21-54c8-afb7-5d828094bff8">
+    <name>НормаВремениМин</name>
+    <synonym>
+      <key>ru</key>
+      <value>Норма времени на изделие, мин</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="aafd47f2-e7dd-5131-86da-97c1f94d60f1">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+</mdclass:Catalog>

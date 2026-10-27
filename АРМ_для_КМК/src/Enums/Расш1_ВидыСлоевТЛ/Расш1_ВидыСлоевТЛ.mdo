@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="56822f1a-9025-5f14-a078-80d88c80ae67">
+  <producedTypes>
+    <refType typeId="2e70a0ea-6516-5bdb-843d-6b672db524da" valueTypeId="d0eb379a-f1fe-5a59-bee9-2631c1c9653d" />
+    <listType typeId="772f0220-a74d-5593-9576-f774feb9a03a" valueTypeId="6b7ccfa0-98c7-5e08-96e9-5ee8c7491d6d" />
+    <managerType typeId="726b148b-f6f1-534d-a257-87bc6f6ac73e" valueTypeId="9933be5c-604a-5033-bfd4-4a55f231e191" />
+  </producedTypes>
+  <name>Расш1_ВидыСлоевТЛ</name>
+  <enumValues uuid="399143e1-3edd-5e46-8b41-9cec17a6c695">
+    <name>Шелкография</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шелкография</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="ae62f218-a259-55ea-993c-9c223baa3b80">
+    <name>Электрообогрев</name>
+    <synonym>
+      <key>ru</key>
+      <value>Электрообогрев</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="87c25fc6-f0f5-50eb-be63-bd0ae7010724">
+    <name>Прочий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прочий</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

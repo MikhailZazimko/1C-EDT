@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6c372104-c54d-57e0-8a9b-63591305a2fb">
+  <producedTypes>
+    <refType typeId="26f5418a-4ddb-58b0-bece-dd29970e094f" valueTypeId="2abad41a-de8c-5c5e-b7fc-3f3e7dd398c1" />
+    <listType typeId="2f6df2c5-ae15-5c90-b479-6bf7544df22d" valueTypeId="172685aa-6307-57a2-869a-b98f980b8ddf" />
+    <managerType typeId="daac1c45-004a-5588-9f5c-6d3483eee689" valueTypeId="d7fdc5bf-7819-5c33-98fc-8798b7d5e254" />
+  </producedTypes>
+  <name>Расш1_ФормыСтеколТЛ</name>
+  <enumValues uuid="02c445ed-de28-560c-85c4-2cb963b4ab29">
+    <name>Плоское</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плоское</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="239431b9-0c1d-5491-919d-bd2acf0bf0ee">
+    <name>Гнутое2D</name>
+    <synonym>
+      <key>ru</key>
+      <value>Гнутое 2D</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="5897d65c-5736-5e31-bb55-46fc8d4e3a3f">
+    <name>Гнутое3D</name>
+    <synonym>
+      <key>ru</key>
+      <value>Гнутое 3D</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

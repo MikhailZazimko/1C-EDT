@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="03585c7f-2a4f-5521-9978-963794d14dd0">
+  <producedTypes>
+    <selectionType typeId="13d2d06e-104c-5670-9a9f-00619311db2e" valueTypeId="376f7e2e-a31d-531f-a600-f4b33bc7e57f" />
+    <listType typeId="24573e35-da8b-5c9e-89bb-de3ad5bf446d" valueTypeId="96006b8e-ea6f-5d28-8737-fef5aee55adf" />
+    <managerType typeId="32fcd662-25ef-5cae-b316-e5c1479febfb" valueTypeId="c80ee7ee-243b-5729-91a5-9911eb26b8fb" />
+    <recordSetType typeId="c95ad66f-1309-59fc-ad10-4c8f0ead30a3" valueTypeId="6bf2d252-8f45-5fe9-b684-2e6b7b9dbaf0" />
+    <recordKeyType typeId="c0c203bf-179a-5da3-b385-f890a3f347fe" valueTypeId="a9d26260-70a9-5331-93ae-0978dcbfff83" />
+    <recordType typeId="8021acc0-0e2e-5fbd-9b2f-9eaf1e0a919e" valueTypeId="bfef8f55-26fe-5195-8fee-ab4ef155e660" />
+    <recordManagerType typeId="846b6ce1-67c2-5806-ac6d-d7fafb24457a" valueTypeId="d223b551-65d7-5d71-9f73-27c3783012ec" />
+  </producedTypes>
+  <name>Расш1_РедакцииТЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Нумерация редакций технических листов</value>
+  </synonym>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6cbe2ad2-7846-5750-aabb-1b0a9108948c">
+    <name>ПоследняяРедакция</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </resources>
+  <dimensions uuid="7ead70e8-3b35-5917-9956-2660e04a967c">
+    <name>ЛинияРедакций</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </dimensions>
+</mdclass:InformationRegister>

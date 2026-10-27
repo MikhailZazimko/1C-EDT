@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1288f86d-b8be-5e24-ab3b-2cab5da923df">
+  <producedTypes>
+    <objectType typeId="6513d75e-f827-52ee-b80f-05b5df9d8cb7" valueTypeId="8cb30058-21ea-538c-ace2-145d94d1df68" />
+    <refType typeId="6f35c963-e962-53e4-a18e-7a43be539fce" valueTypeId="e1b538c1-97b0-52d0-8b15-e3a16a5e4bd1" />
+    <selectionType typeId="574009df-eed3-5108-8aa4-124fe09fc36c" valueTypeId="dc67661b-dfdb-5c88-b880-1502f09ac378" />
+    <listType typeId="193d9aca-0e88-52f7-a07e-fb51e68ade6a" valueTypeId="3eb9e63b-3f8a-5684-a981-15dd7171f7e5" />
+    <managerType typeId="6bbcd8f8-828f-55b1-a0e9-bce80108de49" valueTypeId="e97268f7-f2f5-5f56-8b4c-22b58df026d6" />
+  </producedTypes>
+  <name>Расш1_ЦветаСтекол</name>
+  <synonym>
+    <key>ru</key>
+    <value>Цвета стекол</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <predefined>
+    <items id="2995d908-0411-520c-83cc-316609b661b7">
+      <name>БЦ</name>
+      <description>БЦ</description>
+    </items>
+    <items id="e93245fa-9ffb-5ce6-b891-28364ac287fc">
+      <name>ЗЕ</name>
+      <description>ЗЕ</description>
+    </items>
+    <items id="f472dd73-7151-5405-aeec-293c7c2134d5">
+      <name>BEU</name>
+      <description>BEU</description>
+    </items>
+    <items id="09eec803-f6eb-5407-955c-04415fe1b490">
+      <name>BGO</name>
+      <description>BGO</description>
+    </items>
+    <items id="a8d41821-9d41-5744-8069-d61fd786b311">
+      <name>ВК</name>
+      <description>ВК</description>
+    </items>
+    <items id="bdb01707-b8ed-54f8-aef8-bcb8d3e7a3d2">
+      <name>СЕ</name>
+      <description>СЕ</description>
+    </items>
+    <items id="738fc171-c0a4-590b-b73f-a9b89006586f">
+      <name>СК</name>
+      <description>СК</description>
+    </items>
+    <items id="3bec4c85-7654-5631-aaf2-a6f276d0a3f7">
+      <name>ЧЕ</name>
+      <description>ЧЕ</description>
+    </items>
+    <items id="cb66f86b-e5a9-515a-976a-14098571d3fd">
+      <name>TopN</name>
+      <description>TopN</description>
+    </items>
+    <items id="767d0d97-eca7-538d-b9a2-a2400f998a6a">
+      <name>К</name>
+      <description>К</description>
+    </items>
+    <items id="76593dba-86e0-5b8c-bc3a-e3f66523a60e">
+      <name>G</name>
+      <description>G</description>
+    </items>
+    <items id="174ee421-7296-5120-92e2-01403d94a05c">
+      <name>НЭ</name>
+      <description>НЭ</description>
+    </items>
+    <items id="3ececfcd-ff6c-54ff-8771-1f0643a72346">
+      <name>ST</name>
+      <description>ST</description>
+    </items>
+  </predefined>
+</mdclass:Catalog>

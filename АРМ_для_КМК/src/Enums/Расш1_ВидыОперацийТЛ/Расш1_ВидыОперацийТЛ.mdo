@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1d6f0be2-565c-5785-a372-3b6070d320f7">
+  <producedTypes>
+    <refType typeId="3fdb57aa-bb0b-5190-96e7-2e6d072c84eb" valueTypeId="a95bd1fc-f32a-51c5-b121-ea2856e0fdda" />
+    <listType typeId="128092c8-2bae-559c-8ce6-111d7c4b6870" valueTypeId="456579e8-ed8e-5aac-a8d1-3f2b529f8a6d" />
+    <managerType typeId="bbf4b00d-aa4b-5e79-be8c-fad4919b6a81" valueTypeId="f7fd9ac3-c75c-5681-9d08-c443a2a7f5e6" />
+  </producedTypes>
+  <name>Расш1_ВидыОперацийТЛ</name>
+  <enumValues uuid="8565ac35-5803-5e5d-9e9d-fc034e151ce5">
+    <name>Резка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="db864b2a-62f1-518c-8f79-6a02f02f8cdc">
+    <name>ГАР</name>
+    <synonym>
+      <key>ru</key>
+      <value>ГАР</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="18569e7f-df72-52d5-9be4-21ea03a44ab1">
+    <name>Кромка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка кромки</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="afc0a528-627e-5d3e-9823-5e029684357d">
+    <name>Сверловка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сверловка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="6c7ef28d-7012-5378-80f4-a5e38560ff7a">
+    <name>Маркировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маркировка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="2478471d-b91a-582b-930c-b52bfa5a5aa9">
+    <name>Печать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="bfe8ac51-ee89-555c-bc66-088540365400">
+    <name>Закалка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закалка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="9ca35b02-706f-5f81-9098-1f62448a6008">
+    <name>Пайка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пайка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="1660c60f-424f-5d7d-b3fa-1aef47cfcb1c">
+    <name>Контроль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="2c7b8583-a177-5f21-8c80-73b8743cf53a">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

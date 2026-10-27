@@ -1,0 +1,116 @@
+{
+  "source": "Метаданные основной УНФ, предоставленные пользователем 27.10.2026; UUID не сгенерированы",
+  "catalog": {
+    "name": "Спецификации",
+    "uuid": "ac74fcc0-ae0c-4627-b192-2c6f4b6f0bd7",
+    "owner_type": "CatalogRef.Номенклатура",
+    "characteristic": {
+      "name": "ХарактеристикаПродукции",
+      "uuid": "89d0e977-55b9-45e5-b967-f1d6eceb80f1",
+      "type": "CatalogRef.ХарактеристикиНоменклатуры"
+    },
+    "form": {
+      "name": "ФормаЭлемента",
+      "uuid": "acfe2ffe-7e20-4deb-9e6c-afe2a69a196a",
+      "header_group": "ГруппаЛеваяКолонка",
+      "pages_group": "Страницы",
+      "handlers": {
+        "OnCreateAtServer": "ПриСозданииНаСервере",
+        "OnReadAtServer": "ПриЧтенииНаСервере",
+        "BeforeWriteAtServer": "ПередЗаписьюНаСервере",
+        "AfterWriteAtServer": "ПослеЗаписиНаСервере"
+      }
+    },
+    "composition": {
+      "name": "Состав",
+      "uuid": "01db34ad-b4b8-4f73-9b78-290f28298bf2",
+      "attributes": {
+        "ТипСтрокиСостава": {
+          "uuid": "240f3b98-ae54-49d0-8340-c55807305c3e",
+          "type": "EnumRef.ТипыСтрокСоставаСпецификации"
+        },
+        "Номенклатура": {
+          "uuid": "3c6c1649-69d9-4245-9464-fbedbdac8dbe",
+          "type": "CatalogRef.Номенклатура"
+        },
+        "Характеристика": {
+          "uuid": "efd58826-34f0-4a2f-b130-856cf475b841",
+          "type": "CatalogRef.ХарактеристикиНоменклатуры"
+        },
+        "ЕдиницаИзмерения": {
+          "uuid": "fb1b7ef0-c96a-4057-af1b-8c5b0175e22b",
+          "types": [
+            "CatalogRef.КлассификаторЕдиницИзмерения",
+            "CatalogRef.ЕдиницыИзмерения"
+          ]
+        },
+        "Количество": {
+          "uuid": "aa2925b1-e872-472a-9c7a-c63d7ad34f20",
+          "type": "Number",
+          "precision": 15,
+          "scale": 3
+        },
+        "КоличествоПродукции": {
+          "uuid": "f2a3e7f0-3510-427d-9a8b-9bb10be870f0",
+          "type": "Number",
+          "precision": 15,
+          "scale": 3
+        },
+        "КлючСвязи": {
+          "uuid": "58048237-5de0-4183-94b7-e6ce01c753f9",
+          "type": "Number",
+          "precision": 5,
+          "scale": 0
+        }
+      }
+    },
+    "operations": {
+      "name": "Операции",
+      "uuid": "ace581e7-51df-462c-8240-c8f91daa0917",
+      "attributes": {
+        "Операция": {
+          "uuid": "42ee11bd-35c5-4d38-8c09-e081f8af4b0e",
+          "type": "CatalogRef.Номенклатура"
+        },
+        "НормаВремени": {
+          "uuid": "aa79410d-13e5-4e6c-87ff-b3b9278bab97",
+          "type": "Number",
+          "precision": 10,
+          "scale": 3
+        },
+        "Количество": {
+          "uuid": "81ce5a55-1be5-45be-966f-f94fed0d6c69",
+          "type": "Number",
+          "precision": 15,
+          "scale": 3
+        },
+        "КоличествоПродукции": {
+          "uuid": "2ddc270b-6d48-4463-9566-e9dcb00b98bb",
+          "type": "Number",
+          "precision": 15,
+          "scale": 3
+        },
+        "КлючСвязи": {
+          "uuid": "9f8208a9-9e54-4176-832d-5bfce1e7f367",
+          "type": "Number",
+          "precision": 5,
+          "scale": 0
+        }
+      }
+    }
+  },
+  "composition_row_types": {
+    "name": "ТипыСтрокСоставаСпецификации",
+    "uuid": "e8d4930b-54cb-4c47-a5fb-e6ad5bb4b916",
+    "values": {
+      "Материал": "7e934be8-3515-40ac-9d9e-0c7e4e672863",
+      "Сборка": "109f57a5-a0b9-4518-82b2-8a745ae616cc",
+      "Узел": "a4b0a88d-6eb2-46bb-9a0a-91962a60b373",
+      "Расход": "cf4b48c2-7946-4dc0-a966-ebf1483a4db6"
+    }
+  },
+  "material_base_unit_attribute": {
+    "name": "ЕдиницаИзмерения",
+    "source": "Скриншот справочника Номенклатура основного проекта EDT, предоставленный пользователем 27.10.2026"
+  }
+}

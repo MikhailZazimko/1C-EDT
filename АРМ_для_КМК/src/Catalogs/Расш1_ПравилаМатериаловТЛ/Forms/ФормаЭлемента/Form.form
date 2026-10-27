@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:form="http://g5.1c.ru/v8/dt/form" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <title>
+    <key>ru</key>
+    <value>Правило материалов операции</value>
+  </title>
+  <autoCommandBar>
+    <name>ФормаКоманднаяПанель</name>
+    <id>-1</id>
+    <autoFill>false</autoFill>
+    <items xsi:type="form:Button">
+      <name>ЗаписатьИЗакрыть</name>
+      <id>1</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Записать и закрыть</value>
+      </title>
+      <commandName>Form.StandardCommand.WriteAndClose</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+    </items>
+    <items xsi:type="form:Button">
+      <name>Записать</name>
+      <id>2</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Записать</value>
+      </title>
+      <commandName>Form.StandardCommand.Write</commandName>
+      <representation>Auto</representation>
+    </items>
+  </autoCommandBar>
+  <items xsi:type="form:FormField">
+    <name>Наименование</name>
+    <id>3</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Наименование</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Description</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Использовать</name>
+    <id>4</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Правило активно</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Использовать</segments>
+    </dataPath>
+    <type>CheckBoxField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:CheckBoxFieldExtInfo" />
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Операция</name>
+    <id>5</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Операция</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Операция</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ИсточникМатериала</name>
+    <id>6</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Источник материала</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ИсточникМатериала</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+    <handlers>
+      <event>OnChange</event>
+      <name>ИсточникМатериалаПриИзменении</name>
+    </handlers>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Номенклатура</name>
+    <id>7</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Фиксированный материал</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Номенклатура</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Характеристика</name>
+    <id>8</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Характеристика</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>СпособРасчета</name>
+    <id>9</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Способ расчёта</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.СпособРасчета</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Норма</name>
+    <id>10</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Норма в базовой единице материала</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Норма</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ПроцентПотерь</name>
+    <id>11</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Дополнительный расход, %</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ПроцентПотерь</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ТолщинаОтМм</name>
+    <id>12</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Толщина стекла от, мм (0 — без ограничения)</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ТолщинаОтМм</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ТолщинаДоМм</name>
+    <id>13</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Толщина стекла до, мм (0 — без ограничения)</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ТолщинаДоМм</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ЦветСтекла</name>
+    <id>14</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Для цвета стекла (пусто — любой)</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ЦветСтекла</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ВидСлоя</name>
+    <id>15</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Для вида слоя (пусто — любой)</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.ВидСлоя</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Комментарий</name>
+    <id>16</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Комментарий к норме и единице измерения</value>
+    </title>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Объект.Комментарий</segments>
+    </dataPath>
+    <type>InputField</type>
+    <readOnly>false</readOnly>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <multiLine>true</multiLine>
+    </extInfo>
+  </items>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <attributes>
+    <name>Объект</name>
+    <id>1</id>
+    <valueType>
+      <types>CatalogObject.Расш1_ПравилаМатериаловТЛ</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <main>true</main>
+    <savedData>true</savedData>
+  </attributes>
+  <group>Vertical</group>
+  <enabled>true</enabled>
+  <extInfo xsi:type="form:CatalogFormExtInfo" />
+</form:Form>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ca521103-e635-5b42-8963-2844fb6d792c">
+  <name>Расш1_СпецификацияТЛПередЗаписью</name>
+  <source>
+    <types>CatalogObject.Спецификации</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.Расш1_СпецификацииТЛСервер.СпецификацияПередЗаписью</handler>
+</mdclass:EventSubscription>

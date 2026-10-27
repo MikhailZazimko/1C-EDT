@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a769fb26-4b2a-598b-a722-0081311c4bfb">
+  <producedTypes>
+    <refType typeId="4ad2d885-5ebb-5c16-ab58-ed51148ade06" valueTypeId="07da0652-009b-594e-bf48-c3e955b681c0" />
+    <listType typeId="53b0e0c8-ef8b-5f60-b5b4-0d402675775d" valueTypeId="0a1591a4-6a4b-50dd-b9c8-3732dde2bc42" />
+    <managerType typeId="3bc31609-9cd9-5863-9352-c8a841ccf7c4" valueTypeId="036751d9-cb45-508d-87ea-e00f99c5a8ba" />
+  </producedTypes>
+  <name>Расш1_РасчетМатериаловТЛ</name>
+  <enumValues uuid="d28ed47a-1b67-515a-a261-5691aff0425e">
+    <name>НаИзделие</name>
+    <synonym>
+      <key>ru</key>
+      <value>На изделие</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="d5975922-36ec-5495-b679-b41aa40baf54">
+    <name>НаПлощадьИзделия</name>
+    <synonym>
+      <key>ru</key>
+      <value>На площадь изделия, м²</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="7646714a-271b-5ab9-ac9e-57499a54ef89">
+    <name>НаПлощадьЗаготовки</name>
+    <synonym>
+      <key>ru</key>
+      <value>На площадь заготовки, м²</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="e2939d73-24ed-5b9d-ad35-2156fcbda085">
+    <name>НаПлощадьПечати</name>
+    <synonym>
+      <key>ru</key>
+      <value>На площадь нанесения, м²</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="e8e31fe9-79f4-5eb9-8aa4-db4c1fad9e11">
+    <name>НаПериметр</name>
+    <synonym>
+      <key>ru</key>
+      <value>На длину кромки, м</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="9333f81e-0d68-518a-b356-e606b2263699">
+    <name>НаОтверстие</name>
+    <synonym>
+      <key>ru</key>
+      <value>На отверстие</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="19b90fa8-2080-58ae-a655-1140a760530a">
+    <name>НаСлой</name>
+    <synonym>
+      <key>ru</key>
+      <value>На слой печати</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="bcbe2672-e13f-5280-b77f-dce3aef6fa2d">
+    <name>НаКоннектор</name>
+    <synonym>
+      <key>ru</key>
+      <value>На коннектор</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

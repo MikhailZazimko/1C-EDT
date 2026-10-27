@@ -17,4 +17,8 @@
   </synonym>
   <content>CommonCommand.Расш1_ЖурналЗаказовВРаботу</content>
   <content>InformationRegister.Расш1_РаботникиПользователей</content>
+  <content>Catalog.Расш1_ТехническиеЛисты</content>
+  <content>Catalog.Расш1_ОперацииТЛ</content>
+  <content>Catalog.Расш1_ПравилаМатериаловТЛ</content>
+  <content>Catalog.Расш1_ЦветаСтекол</content>
 </mdclass:Subsystem>

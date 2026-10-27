@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f8f2d1be-273c-5054-adae-3e2d51d63572">
+  <producedTypes>
+    <refType typeId="36392423-2ec5-54bf-a6fd-8d126b165481" valueTypeId="4cb4922d-3c03-549a-8d79-e563b47d5c83" />
+    <listType typeId="c7e662a3-caf9-5652-b16b-ebb88d5d61ab" valueTypeId="df3aa5c9-4120-5676-94a2-640cebe3b5fc" />
+    <managerType typeId="8bba2903-37ac-5edb-b2df-337411773950" valueTypeId="a2dc529e-094c-5461-861e-a4c6497b6205" />
+  </producedTypes>
+  <name>Расш1_ОбработкаСтеклаТЛ</name>
+  <enumValues uuid="b654136a-24e5-58eb-b5af-dc32d1738245">
+    <name>Закаленное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закалённое</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="a3fd9a60-1aa3-5f68-82e9-84b7e4b66ac4">
+    <name>Многослойное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Многослойное</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="642a4f35-d4f9-5079-95a9-203718d2873f">
+    <name>Другая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Другая</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

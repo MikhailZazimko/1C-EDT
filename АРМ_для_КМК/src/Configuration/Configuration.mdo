@@ -69,4 +69,28 @@
   <commonModules>CommonModule.Расш1_ПечатьЭтикетокСервер</commonModules>
   <commonTemplates>CommonTemplate.Расш1_Этикетка58х40</commonTemplates>
   <informationRegisters>InformationRegister.Расш1_НумерацияЭтикеток</informationRegisters>
+  <catalogs>Catalog.Расш1_ТехническиеЛисты</catalogs>
+  <catalogs>Catalog.Расш1_ОперацииТЛ</catalogs>
+  <catalogs>Catalog.Расш1_ПравилаМатериаловТЛ</catalogs>
+  <catalogs>Catalog.Расш1_ЦветаСтекол</catalogs>
+  <enums>Enum.Расш1_СостоянияТЛ</enums>
+  <enums>Enum.Расш1_ВидыОперацийТЛ</enums>
+  <enums>Enum.Расш1_ИсточникиМатериаловТЛ</enums>
+  <enums>Enum.Расш1_РасчетМатериаловТЛ</enums>
+  <enums>Enum.Расш1_ВидыСлоевТЛ</enums>
+  <enums>Enum.Расш1_ТипыСтеколТЛ</enums>
+  <enums>Enum.Расш1_ОбработкаСтеклаТЛ</enums>
+  <enums>Enum.Расш1_ФормыСтеколТЛ</enums>
+  <commonModules>CommonModule.Расш1_МатериалыТЛРасчет</commonModules>
+  <commonModules>CommonModule.Расш1_ТехническиеЛистыСервер</commonModules>
+  <commonModules>CommonModule.Расш1_ПечатьТЛСервер</commonModules>
+  <informationRegisters>InformationRegister.Расш1_РедакцииТЛ</informationRegisters>
+  <commonModules>CommonModule.Расш1_СхемаТЛСервер</commonModules>
+  <roles>Role.Расш1_Технолог</roles>
+  <catalogs>Catalog.Спецификации</catalogs>
+  <eventSubscriptions>EventSubscription.Расш1_СпецификацияТЛПередЗаписью</eventSubscriptions>
+  <commonModules>CommonModule.Расш1_СпецификацииТЛСервер</commonModules>
+  <commonModules>CommonModule.Расш1_ФормаСпецификацииТЛСервер</commonModules>
+  <commonModules>CommonModule.Расш1_СоставТЛРасчет</commonModules>
+  <enums>Enum.ТипыСтрокСоставаСпецификации</enums>
 </mdclass:Configuration>

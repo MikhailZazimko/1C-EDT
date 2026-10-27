@@ -1,0 +1,2425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3562ec58-5d5e-5a4c-b5dd-85bddf843cd6">
+  <producedTypes>
+    <objectType typeId="91ceda86-dcde-5161-a8f0-890d145ccb99" valueTypeId="739bcbe1-2e1b-5ccd-887c-fd6eb6576806" />
+    <refType typeId="e0ebe62a-3f25-5dc1-bfe6-e847ade73316" valueTypeId="39182366-a8cc-5a3b-a383-ae4da26abfc1" />
+    <selectionType typeId="f522b10b-a278-5537-b89d-1159dd3ad2e4" valueTypeId="0fbb2d40-c90c-5719-b9f1-2563a8ed3483" />
+    <listType typeId="ca12e619-8217-5c40-931a-2cb841ed577e" valueTypeId="32de12d8-1b85-5425-be1c-7b29521b867a" />
+    <managerType typeId="150304fb-98a3-56e5-a729-988ec16b7102" valueTypeId="b5babd13-d4e2-58e1-85c4-f68d93154ffa" />
+  </producedTypes>
+  <name>Расш1_ТехническиеЛисты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Технические листы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <defaultObjectForm>Catalog.Расш1_ТехническиеЛисты.Form.ФормаЭлемента</defaultObjectForm>
+  <forms uuid="46975fec-bc65-5010-81fc-ab704fcecd32">
+    <name>ФормаЭлемента</name>
+  </forms>
+  <attributes uuid="49376d2c-8294-57e6-9203-5ac371fcdc6c">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изделие</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+  </attributes>
+  <attributes uuid="b440b36a-7d90-59cc-a54a-7978adf68a1c">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+  </attributes>
+  <attributes uuid="8d939e96-39dc-584a-8393-973df5c1c705">
+    <name>Индивидуальный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индивидуальный технический лист</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="00cfd5b3-0920-588c-8281-5e014ec915c3">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ на производство</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+  </attributes>
+  <attributes uuid="2d394493-90b4-5f32-85af-470c0c62afd0">
+    <name>НомерСтрокиЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка продукции заказа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="e45cb483-376a-58b4-abfd-e2aa7ff7f91d">
+    <name>БазовоеКоличество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Базовое количество выпуска</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c1e50a6e-cd73-5b72-8331-01e8cce6bf74">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_СостоянияТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="c6e9516d-e616-5ac4-b778-878cab083743">
+    <name>Редакция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редакция</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="8f5afa14-940d-5890-b63f-564db7e9e327">
+    <name>ЛинияРедакций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Линия редакций</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="06180dea-6fcd-5720-9751-434799d58a23">
+    <name>ПредыдущаяРедакция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предыдущая редакция</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Расш1_ТехническиеЛисты</types>
+    </type>
+  </attributes>
+  <attributes uuid="9c4f0780-3eb2-5b62-b62e-a3bfcdde08d1">
+    <name>ИсходныйТехЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исходный технический лист</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Расш1_ТехническиеЛисты</types>
+    </type>
+  </attributes>
+  <attributes uuid="80efa4f8-972e-5a26-91b1-4cdc42f4cd4f">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Техлист создал</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="5a3f25bd-2fbc-57b3-8d3e-a4b506f8824f">
+    <name>ДатаСоздания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата создания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>DateTime</dateFractions>
+      </dateQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="d5d6a27f-70fd-5e28-b1a8-e1e0612f860e">
+    <name>Утвердил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Утвердил</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="25e177d0-45ab-5bf0-b656-4238d43b9e1e">
+    <name>ДатаУтверждения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата утверждения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>DateTime</dateFractions>
+      </dateQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="ac9e9612-c10b-5752-8185-15e468279173">
+    <name>СнимокСоставаУНФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зафиксированный состав УНФ</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+  </attributes>
+  <attributes uuid="7b2753fa-7b5b-5a0c-9c19-55f4723f7de6">
+    <name>ОшибкиРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибки расчёта материалов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="c0200c54-2723-5b0f-8865-fe297cec3cbf">
+    <name>КодИзделия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код изделия</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="bd844364-717a-5ce6-af21-82ae78e37b12">
+    <name>Цех</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цех</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="771b32f7-98f7-5f34-aafa-25a2ea02ece5">
+    <name>ТипТранспорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип транспорта</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="493e99ad-8d8f-5cc7-a552-da8032de2df2">
+    <name>ПроизводительАвто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производитель автомобиля</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="6bd7fff9-8806-5262-ae78-1f9e5c205b3b">
+    <name>МодельАвто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Модель</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="3f5ed0fb-433f-536e-8a55-ff2cbc26f965">
+    <name>Кузов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кузов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="51763876-766f-515e-849b-5da8ca1af57c">
+    <name>ГодыВыпуска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Годы выпуска</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="0454b01a-2054-5e45-a05c-8d07a1316ad9">
+    <name>ТипСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип стекла</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ТипыСтеколТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="7c1395c2-4dab-5632-afd2-e9db32d2ca6b">
+    <name>ВидОбработкиСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид готового изделия</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ОбработкаСтеклаТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="a2d58864-a533-5fc3-b72b-4f8d61dde6db">
+    <name>ОписаниеИзделия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="00afdaa9-9d8a-5b3e-87d8-adae897735d0">
+    <name>Сторона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторона</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="58a79721-ab3a-5bb0-9427-8ccd90f83891">
+    <name>СвязанноеСтекло</name>
+    <synonym>
+      <key>ru</key>
+      <value>Связанное стекло</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+  </attributes>
+  <attributes uuid="90725eb3-18da-5e01-880d-5767c3005677">
+    <name>ШиринаМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ширина, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="4788d821-a696-54a3-95f4-3019f8bfc778">
+    <name>ВысотаМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Высота, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="839a7687-29d5-5c9d-87f5-9f0175f331b6">
+    <name>ТолщинаМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Толщина, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7f316d7c-7949-548e-97c5-eb52d7f7d144">
+    <name>ЦветСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цвет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Расш1_ЦветаСтекол</types>
+    </type>
+  </attributes>
+  <attributes uuid="975df487-3122-5117-9e57-83c6ba90b37e">
+    <name>МатериалСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стекло-заготовка (номенклатура)</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+  </attributes>
+  <attributes uuid="ea98b569-ae81-5ba0-bfed-b445feba1b70">
+    <name>ХарактеристикаСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика заготовки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+  </attributes>
+  <attributes uuid="4f09661f-728b-503c-858e-4da9b622eff5">
+    <name>ПлощадьИзделияМ2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Площадь по контуру, м² (0 — по габаритам)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="1ed303a7-c5c6-592e-9654-8c42cd7ffa19">
+    <name>ПлощадьЗаготовкиМ2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Площадь заготовки, м² (0 — габариты с припуском)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="28101b4f-b67b-51c4-9da8-a1052c4deb67">
+    <name>ПериметрМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Длина кромки, м (0 — периметр прямоугольника)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="606d7f51-14d9-50cb-b698-cc2fba3c8d4c">
+    <name>ПризнакШелкографии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шелкография</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="2d2f92c4-d86c-59d7-922a-4ecb2ca21b25">
+    <name>ПризнакЭлектрообогрева</name>
+    <synonym>
+      <key>ru</key>
+      <value>Электрообогрев</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="cf411cc0-2cba-5ae7-9dd3-92a84e78c0a2">
+    <name>ПризнакАнтенны</name>
+    <synonym>
+      <key>ru</key>
+      <value>Антенна</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="6b82dcf6-215a-5da7-9456-6b35dba25a5b">
+    <name>ПризнакФорточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форточка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="80086cdb-7952-5002-835f-b91bffb42f3f">
+    <name>Примечание1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание 1</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="18ab24f1-7fea-5625-b22d-099ee8f27591">
+    <name>Примечание2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание 2</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="1fba133f-a9e8-55ba-b00e-557849a0c672">
+    <name>Примечание3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание 3</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="bf9b060c-60cf-5558-b04a-08af3ea0cfac">
+    <name>РазмерСклада</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер склада</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="b09608fc-3612-59d0-9b23-6f25eee05707">
+    <name>СМ2</name>
+    <synonym>
+      <key>ru</key>
+      <value>SM2</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="18384c96-8f2d-5451-99d0-5a2cf3aab633">
+    <name>РазмерСкладаПримечание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание к размеру склада</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="b50d38e0-188f-5a98-8cb4-b27c573a571c">
+    <name>СтолРезки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стол резки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7beeb115-47f2-55c7-b709-be3303be72eb">
+    <name>ФайлРезки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя программы резки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="a31e6a76-ad88-5f43-bbf4-d23793bc2844">
+    <name>ТипРолика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип ролика</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="85a00abf-db39-502b-894b-e1cb230b1703">
+    <name>ДавлениеРолика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Давление ролика</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="25c283a3-8ccd-579e-aa0a-da711a0ebd13">
+    <name>ПрипускРезкиМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Припуск на сторону, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7c712741-8b93-534e-8d2a-01c7d2b2137a">
+    <name>РазверткаЯчейка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Развёртка / ячейка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="1532a6e5-b998-5d2e-b36a-b62f13c7b6b0">
+    <name>ОловоПокрытие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Олово / покрытие</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="b99b3ea2-7d87-5069-b38b-ff4360325082">
+    <name>НомерПокрытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер покрытия</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c277fd8b-039c-58d5-8072-132205ab07c3">
+    <name>ОборудованиеГАР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование ГАР</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="97c48595-e67d-5498-9089-edac25bcc60f">
+    <name>ФайлГАР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя программы ГАР</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="977b8b41-6d18-59aa-88dd-ac6cb1665880">
+    <name>КоличествоДеталейГАР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество деталей ГАР</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="ac8d7ee8-527a-5455-8bcc-545f633e31de">
+    <name>ОтверстияГАР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отверстия ГАР</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="88612d57-7efb-501c-8b6a-83dfab29c472">
+    <name>ОбработкаТорцов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка торцов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="afbdee84-87f5-5573-a1f3-5710cdb8c72b">
+    <name>ЦентрОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Центр обработки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="a15d575d-4fef-5aa5-b0a3-048131ebebd1">
+    <name>СнятьНаСторонуМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Снять на сторону, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7dabcb34-de30-5249-ad66-2e41b9bdaed3">
+    <name>ДопускГабаритаМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Допуск габарита, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="be74c71a-76ef-5a22-bfd3-3e81aced267e">
+    <name>КоличествоВырезов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество вырезов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="882c5e15-db87-5b09-a6c4-6bca97f55442">
+    <name>РазверткаКромки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Развёртка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="94a518e7-502a-5bba-a17d-381857c805ad">
+    <name>ФайлКромки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя программы обработки кромки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="4c48874d-dbc3-5ca6-af01-90e6e4f7e09e">
+    <name>Инструмент1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инструмент 1</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="fa89402f-9742-59c5-b831-60a27875b933">
+    <name>Проходов1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проходов, инструмент 1</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="ef00ae4c-629f-57ef-b424-d2f6a6a3b779">
+    <name>Инструмент2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инструмент 2</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="26853891-1d37-5988-bb67-bc5d2a4a3841">
+    <name>Проходов2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проходов, инструмент 2</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="d0b80342-e324-5e2b-a766-62d98f09b813">
+    <name>Инструмент3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инструмент 3</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="2d4522e0-7e46-5de2-9bc4-361dce64875f">
+    <name>Проходов3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проходов, инструмент 3</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="2f847b96-59e9-5a75-820b-656147e3a442">
+    <name>СветитьСтекло</name>
+    <synonym>
+      <key>ru</key>
+      <value>Светить стекло</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="1ca5c982-cfe3-5b70-ba5b-3b52249a1de3">
+    <name>МерныйШаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мерный шаблон</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="773b5abd-dce6-50ea-8290-b428d00e2b46">
+    <name>ИспользованиеПланки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использование планки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="fcc5e7f9-7b9e-5de5-9dcb-b6df1b0bb0a8">
+    <name>ФайлСверловки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя программы сверловки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7ea4c68e-3cc5-5b9d-b788-37180efb71d7">
+    <name>СтеллажСверловки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стеллаж</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="d40608a9-1f37-503e-8ad0-6652ec78c33f">
+    <name>ПолкаСверловки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="5630729a-612f-5697-a9b2-ce87ce9b281e">
+    <name>ТипЗамкаФорточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип замка форточки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="6a5164e1-4c4b-5c85-830b-f66e6a319ffc">
+    <name>ПримечаниеСверловка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание к сверловке</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="713e64c1-e009-5444-8b0a-1d99d5a11cda">
+    <name>МестоМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место нанесения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="2998c76a-8b3d-5a6d-b11b-3d8b8270fc3d">
+    <name>ПоверхностьМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поверхность нанесения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="3bf91624-d27b-53df-87da-20a1c7b5ed4f">
+    <name>ЧитаемостьМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Читаемость маркировки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="8b915f07-27ed-5ce3-b3b4-6b99365c0653">
+    <name>ПозицияМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Позиция маркировки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="f86949f7-2e82-533d-8514-ddd2f1d0f6d4">
+    <name>ОбразецМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Название вложения с образцом маркировки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c8aed5a7-cc45-5207-9b53-c84850fb0855">
+    <name>ПримечаниеМаркировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание к маркировке</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="c6a359bc-697f-5e37-8e81-5c946e1ea6b3">
+    <name>РежимСушки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим сушки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="f9092b76-0e13-56e0-b83d-027c94b32586">
+    <name>СветитьПриПечати</name>
+    <synonym>
+      <key>ru</key>
+      <value>Светить при печати</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="63a13729-9e43-5c84-9bc2-7418316fa068">
+    <name>ИспользованиеЕлки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использование ёлки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+  </attributes>
+  <attributes uuid="98e6c1aa-351f-5893-8973-6c8313aa6b45">
+    <name>СлойЭлектрообогрева</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер слоя электрообогрева</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="0ac1166a-a85c-5ac5-9646-fd3bc2f4026b">
+    <name>КоличествоНитей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество нитей</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="1aecf35b-9b12-56d9-be47-20c925a2600a">
+    <name>ТолщинаНитиМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Толщина нити, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="489ee726-0c56-5bd0-a78b-c1869fc91afe">
+    <name>СопротивлениеОтОм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопротивление от, Ом</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="501e3c19-59fd-5866-8d1a-d5d5328083f2">
+    <name>СопротивлениеДоОм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопротивление до, Ом</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="69e366b1-c0ce-589d-bb1c-dd4bf54e3635">
+    <name>ВидСоСтороны</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид со стороны</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="ea2bdeac-8c4a-538f-926c-da467f43f9b3">
+    <name>Печь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печь</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c49e34c7-cfe1-55c0-b831-ade47129bc99">
+    <name>ФайлЗакалки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя программы закалки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="05084119-b6cd-5ab3-88b9-76171830dade">
+    <name>ОбработкаЗакалка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="aa3012a2-d620-5807-8cfa-1216290a9711">
+    <name>ФормаСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма стекла</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Расш1_ФормыСтеколТЛ</types>
+    </type>
+  </attributes>
+  <attributes uuid="382d63a1-bbf6-5d15-ad25-3675f6e71bc8">
+    <name>НаправлениеЗакалки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c9fffbac-8a6d-541b-8259-b6974ecc1ea5">
+    <name>Обдувки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обдувки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="2b2a2c40-f12f-5d5f-9997-f4b4ff24c207">
+    <name>АркаМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Арка, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="3bfa4f91-07e1-51f2-bb50-f775b4068547">
+    <name>РадиусМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Радиус, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7db8c84b-249b-5703-9f81-a3bae370c965">
+    <name>ЗагрузкаПечи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка, шт.</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>9</precision>
+        <scale>0</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="158b2881-8fe4-5d89-9d4a-371993d9fd44">
+    <name>ВремяНагреваСек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время нагрева, с</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="8b75fa50-0310-547b-960f-3ab0a66fac3c">
+    <name>ВремяЗакалкиСек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время закалки, с</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="7b57b548-8416-58fc-8eaa-95fd6a9f3762">
+    <name>ВремяОхлажденияСек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время охлаждения, с</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="13aeb6f0-f030-5d09-9723-22c043366bea">
+    <name>ПоперечныйПровисМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поперечный провис, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="13f8ac81-18f1-55a9-bc99-89ba4f2a94a7">
+    <name>ДопускПрилеганияМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Допуск прилегания, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="9e171c4e-80b7-52be-b3e3-bd4a905e12f6">
+    <name>ВыходЗакалки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выход</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="57dbaa5c-f39c-5ed9-b2b3-344939ab3aeb">
+    <name>РабочаяОснастка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочая оснастка</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="19016987-988d-5c77-8650-ef2353a9ece8">
+    <name>СтеллажОснастки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стеллаж оснастки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="53369fc7-bc69-50eb-add9-749091ee0c9a">
+    <name>ПолкаОснастки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полка оснастки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="bfcdf92c-f9a7-5a5c-951b-b98b629c2615">
+    <name>ОбразецБирки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Название вложения с образцом бирки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="8ee0353f-6c28-56a2-b875-60113ded449f">
+    <name>КонтрольноеСтекло</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрольное стекло</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="8b7e925d-0c7f-5799-9a88-0ac20d031656">
+    <name>СтеллажКонтроля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стеллаж контроля</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="61178180-3483-5d93-95f4-f806bf4635ac">
+    <name>ПолкаКонтроля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Полка контроля</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="4b91f460-cd6f-5364-83af-31b6589743d9">
+    <name>РадиусКонтроляМм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Радиус контроля, мм</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>6</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="c96e4f19-9aee-5552-9b98-1efb7715fe6d">
+    <name>УпаковкаСтекла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка стекла</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="64736eab-8d67-57c3-ab46-3e57a5caf17a">
+    <name>ПримечаниеКонтроль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание к контролю</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="903713d3-aa0f-503d-8bce-a8d3a283ba6a">
+    <name>ПримечаниеПайка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание к пайке</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <attributes uuid="de73e21a-d796-5205-bda3-eaa7d11d45dd">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общий комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <multiLine>true</multiLine>
+  </attributes>
+  <tabularSections uuid="00f4f67e-6d3f-5194-bec2-449d1ac8c1a3">
+    <producedTypes>
+      <objectType typeId="6210f530-07d8-5878-8922-cb5a8b34896c" valueTypeId="28e06505-daa6-54ab-9ed4-758e21b9b4a7" />
+      <rowType typeId="b86b138c-4cc2-5c26-8d9b-8730c66c364c" valueTypeId="35ea13f4-1f02-50d4-83a3-a09965be28e5" />
+    </producedTypes>
+    <name>Операции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрут</value>
+    </synonym>
+    <attributes uuid="8633d9e1-b17f-5c6f-bc05-444b3fb18381">
+      <name>Идентификатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="1ab89bf2-ffbc-51f7-afa4-bbb37d6145bd">
+      <name>Использовать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Включена</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+    </attributes>
+    <attributes uuid="bbc3c860-cfec-5457-899c-f6325f5d2f3f">
+      <name>Операция</name>
+      <synonym>
+        <key>ru</key>
+        <value>Операция</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Расш1_ОперацииТЛ</types>
+      </type>
+    </attributes>
+    <attributes uuid="0217b8a4-cb47-5b1c-b64e-834702bc9980">
+      <name>Участок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Участок</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Участки</types>
+      </type>
+    </attributes>
+    <attributes uuid="d12ae109-d048-589d-9f56-ab1d1502563c">
+      <name>РаботаУНФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Работа УНФ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+    </attributes>
+    <attributes uuid="a85a119a-fc0d-51e1-b6bf-f2816456f7b2">
+      <name>НормаВремениМин</name>
+      <synonym>
+        <key>ru</key>
+        <value>Норма времени на изделие, мин</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="7a59259d-65e0-531f-a1ef-6547b663168f">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="b72ea0e8-520a-5f7c-998a-b3556e65ffcd">
+    <producedTypes>
+      <objectType typeId="4c501c6a-f7b4-580c-883b-64a56e158599" valueTypeId="d6ed50d8-93a6-5b9b-9156-ab3657f1955a" />
+      <rowType typeId="fed40631-b737-5ad5-bc66-e317ab3c5bd9" valueTypeId="a3548942-eef3-56b3-a2bf-b7552aab5665" />
+    </producedTypes>
+    <name>Отверстия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отверстия</value>
+    </synonym>
+    <attributes uuid="3edcb00a-e2b5-5ab0-9a32-b7a1f7d4891d">
+      <name>Идентификатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="ae79b215-90d9-5cc8-a746-d95ff60478d0">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>9</precision>
+          <scale>0</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="d107de93-eed7-5863-880a-39db947c7fe0">
+      <name>ДиаметрМм</name>
+      <synonym>
+        <key>ru</key>
+        <value>Диаметр, мм</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="f25d4a65-c4c3-57b6-b74b-7f9895979285">
+      <name>ДоКраяМм</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расстояние до края, мм</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="0b4e0f2a-97bf-5e1c-aaf8-8d96b9319d14">
+      <name>Положение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Положение / координаты</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="1a3eab0d-8793-52be-a282-e80b28b58395">
+      <name>Примечание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Примечание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="8c9b856a-329c-561e-b562-673c1c298e92">
+    <producedTypes>
+      <objectType typeId="71984825-5f06-5a3a-9a19-cd1c11f523bc" valueTypeId="db1364b8-cfd7-52d9-bfcb-8b8a01235e8b" />
+      <rowType typeId="e0c0c8c4-5d8f-5699-a1b6-c6e045193c56" valueTypeId="e6fb82af-5410-535a-a1f8-c4fc31f4fdb7" />
+    </producedTypes>
+    <name>СлоиПечати</name>
+    <synonym>
+      <key>ru</key>
+      <value>Слои печати</value>
+    </synonym>
+    <attributes uuid="49ef0ca0-1757-5bf1-86fd-2a9dc331efd2">
+      <name>Идентификатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="b33ffd4f-9635-5caa-9424-c3b0f63bdc26">
+      <name>Использовать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Включён</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+    </attributes>
+    <attributes uuid="247287ce-8cb1-5098-94d2-581834057d16">
+      <name>ВидСлоя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид слоя</value>
+      </synonym>
+      <type>
+        <types>EnumRef.Расш1_ВидыСлоевТЛ</types>
+      </type>
+    </attributes>
+    <attributes uuid="d512a18c-c49a-50f6-8d98-7c7f8babface">
+      <name>Материал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Краска / паста (номенклатура)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+    </attributes>
+    <attributes uuid="57628441-0315-5224-8530-1ea151aa62ef">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+    </attributes>
+    <attributes uuid="829908da-c4ee-5f65-8a8f-244c5265d93e">
+      <name>МестоНанесения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Место нанесения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="e1887d2c-51c8-5804-a9e6-deedfc0f4204">
+      <name>ЦветКраски</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цвет краски</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="fbb43197-f0e2-5a05-8e1a-39ec8ae66c51">
+      <name>ПроцентНанесения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Площадь нанесения, %</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="0f9da646-5eb9-5404-96eb-f1829c61fc08">
+      <name>Файл</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя программы / файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="8dafaafd-5324-5eef-a2a7-4b52f2285810">
+      <name>ДатаФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата создания файла</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>DateTime</dateFractions>
+        </dateQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="39f3a533-65bb-55da-bc6a-a60fcd7cbf09">
+      <name>АвторФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Файл создал</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="7594ff9f-1ee5-571d-a6af-711f4f291c43">
+      <name>НомерЭкрана</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер экрана</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="6e6541d7-e5fa-5a85-8b99-945c2b92c896">
+      <name>ДатаЭкрана</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изготовления экрана</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>DateTime</dateFractions>
+        </dateQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="4147491e-b59b-5d25-bf43-cf9ba72bf79e">
+      <name>Стеллаж</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стеллаж</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="e26fc56c-2174-57db-a54a-aded0718d641">
+      <name>Полка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Полка</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="bc64dd9a-c7ac-5c72-aa67-ec2bc70287b3">
+      <name>Ракель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ракель</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="485dbcc3-2602-5870-99a5-73b69ff477b3">
+      <name>Примечание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Примечание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="1ef3af6d-a21c-596a-be2d-55c10e8f949a">
+    <producedTypes>
+      <objectType typeId="f8bd87cd-90a2-5d20-89c7-5d5af615f3e5" valueTypeId="15e34b60-e7c9-5bd7-bb6c-46c52fb4fac6" />
+      <rowType typeId="35646918-1787-5f95-ae51-017f6478d2ab" valueTypeId="2eba2695-7406-5ad4-aa31-55004250408e" />
+    </producedTypes>
+    <name>Коннекторы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пайка / коннекторы</value>
+    </synonym>
+    <attributes uuid="52972592-5040-5e8c-8714-906d2076f057">
+      <name>Идентификатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="74fbfc46-1878-53b2-94f1-ed789a2cff0a">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип коннектора (номенклатура)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+    </attributes>
+    <attributes uuid="11952ea0-8461-538b-a895-0778bedf051a">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+    </attributes>
+    <attributes uuid="b6e5064f-a3e0-5963-bcf3-941fc6f4cc5b">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество на изделие</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>9</precision>
+          <scale>0</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="7009404f-f32a-577a-96cc-981e4086f211">
+      <name>КоличествоПаек</name>
+      <synonym>
+        <key>ru</key>
+        <value>Паек на коннектор</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>9</precision>
+          <scale>0</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="01b3ff1b-5ac5-59e3-9bc8-9fc1afc81af6">
+      <name>Направление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="628d247c-40e6-5390-afad-cce1ce2a3bd2">
+      <name>Примечание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Примечание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e0c5c782-aca7-52f1-a579-293c0cb23970">
+    <producedTypes>
+      <objectType typeId="a89491f2-bcae-578a-94ba-176cd1138af8" valueTypeId="373d804d-d347-59d6-bce6-34c2d918e03b" />
+      <rowType typeId="f81495ee-79f9-58f8-b3da-d659da4b68c2" valueTypeId="79ddab2d-711e-596a-847f-499055581db9" />
+    </producedTypes>
+    <name>Материалы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Материалы</value>
+    </synonym>
+    <attributes uuid="8cc387b2-820e-5d9d-be09-27212224577d">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Материал</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+    </attributes>
+    <attributes uuid="88b1e5c0-f658-54fd-9a61-cea5089829bf">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+    </attributes>
+    <attributes uuid="6a43774e-ebef-50b4-a596-6f3b9dfdad3e">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Норма на базовый выпуск</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="b63a9397-a1b0-517e-b445-34e8fb80de6f">
+      <name>Рассчитано</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рассчитано</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="7ac15e64-7652-54fc-829f-a70ec4e8bc6e">
+      <name>Корректировка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ручная корректировка нормы</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>false</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="610c944b-ce2d-509e-a08f-72e78f3611af">
+      <name>Автоматически</name>
+      <synonym>
+        <key>ru</key>
+        <value>Из операции</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+    </attributes>
+    <attributes uuid="2a9fd8ac-43bc-505e-b296-f7a07bb5b09f">
+      <name>Операция</name>
+      <synonym>
+        <key>ru</key>
+        <value>Операция</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Расш1_ОперацииТЛ</types>
+      </type>
+    </attributes>
+    <attributes uuid="5dd1af88-dbf6-5e35-97df-179dbf035d08">
+      <name>ИдентификаторОперации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор операции</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="75fbb3f9-26b4-517b-a27f-69a1107732b7">
+      <name>Правило</name>
+      <synonym>
+        <key>ru</key>
+        <value>Правило</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Расш1_ПравилаМатериаловТЛ</types>
+      </type>
+    </attributes>
+    <attributes uuid="1e61f433-57a7-5a24-9ba5-343fbf4644ca">
+      <name>КлючРасчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ключ расчёта</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>250</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="e968498f-d76c-509a-bb85-ebbcbb365c43">
+      <name>ОснованиеРасчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расчёт нормы</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="3f551e25-818f-5eec-8ff6-2406a02c5017">
+    <producedTypes>
+      <objectType typeId="3c6b04f9-097e-576a-ade2-bf4a26a0d9ba" valueTypeId="fe47b7de-2c1c-58b5-8066-28ff3166d7e0" />
+      <rowType typeId="f6aa20e0-7080-56ae-af92-0518a5e8ae88" valueTypeId="01fe783c-037f-50ba-96fe-e4d8836e5841" />
+    </producedTypes>
+    <name>РучныеМатериалы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительные материалы вручную</value>
+    </synonym>
+    <attributes uuid="85866f7b-afaa-5901-9e0b-6df67d19a3c0">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Материал</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+    </attributes>
+    <attributes uuid="1e644d75-32c6-5ab5-8f97-10b3362d01f6">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+    </attributes>
+    <attributes uuid="3d6f99af-724a-5a8a-ae75-96669bfb46e4">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Норма на базовый выпуск</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>6</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="89de6c50-9cfa-5126-a8a3-387f5bae502c">
+      <name>Примечание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Примечание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>0</length>
+        </stringQualifiers>
+      </type>
+      <multiLine>true</multiLine>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="09e891e1-b2fd-5147-acf4-a7d2ba9292d9">
+    <producedTypes>
+      <objectType typeId="b2b34760-c0e3-5260-9a6c-410b1cd0aa3b" valueTypeId="b3696a08-23cc-527c-961d-bcfdd7aed489" />
+      <rowType typeId="f65e7bae-1db6-5e22-8676-6fb5939ea3e8" valueTypeId="2f4d7c85-bfce-53b8-8e8c-0bcea2142baf" />
+    </producedTypes>
+    <name>Файлы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чертежи, программы и фотографии</value>
+    </synonym>
+    <attributes uuid="0c6edc66-a47f-5686-bbea-49a7dedd742b">
+      <name>Идентификатор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="0a04b277-94a3-5aeb-885c-e0e344146038">
+      <name>Наименование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="d4c441c8-4ae5-5e36-97b0-ba3d37cd8e2d">
+      <name>ИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="0ee72f5b-a50d-57ef-8527-fd42ec264caa">
+      <name>Адрес</name>
+      <synonym>
+        <key>ru</key>
+        <value>Внешняя ссылка</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>1000</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
+    <attributes uuid="db9b2685-aeea-5da4-ad2d-a40cce3f9ef9">
+      <name>Данные</name>
+      <synonym>
+        <key>ru</key>
+        <value>Содержимое файла</value>
+      </synonym>
+      <type>
+        <types>ValueStorage</types>
+      </type>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>
