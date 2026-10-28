@@ -98,4 +98,5 @@
   <commandGroups>CommandGroup.Расш1_КМКТехническиеЛисты</commandGroups>
   <commandGroups>CommandGroup.Расш1_КМКСправочники</commandGroups>
   <commandGroups>CommandGroup.Расш1_КМКНастройки</commandGroups>
+  <commonModules>CommonModule.Расш1_ЯчейкиЛистаТЛ</commonModules>
 </mdclass:Configuration>

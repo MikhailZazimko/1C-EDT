@@ -2390,6 +2390,19 @@
         </stringQualifiers>
       </type>
     </attributes>
+    <attributes uuid="141a28ad-0830-5587-aa07-ef858f6af4d9">
+      <name>Назначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение изображения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+    </attributes>
     <attributes uuid="d4c441c8-4ae5-5e36-97b0-ba3d37cd8e2d">
       <name>ИмяФайла</name>
       <synonym>

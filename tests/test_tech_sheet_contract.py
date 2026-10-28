@@ -141,7 +141,7 @@ class TechSheetMetadataTest(unittest.TestCase):
         self.assertEqual(name.findtext('readOnly'), 'false')
         self.assertEqual(name.findall('handlers'), [])
 
-    def test_technology_card_uses_tabs_and_compact_groups(self):
+    def test_technology_card_follows_the_supplied_paper_layout(self):
         form = ET.parse(FORM).getroot()
         controls = {n.findtext('name'): n for n in form.iter('items')}
         pages = controls['СтраницыТехЛиста']
@@ -151,9 +151,14 @@ class TechSheetMetadataTest(unittest.TestCase):
         self.assertEqual(header.findtext('extInfo/group'), 'Vertical')
         self.assertEqual(header.findtext('verticalStretch'), 'false')
         self.assertEqual(header.findtext('extInfo/representation'), 'None')
-        for group in form.iter('items'):
-            if group.findtext('type') == 'UsualGroup':
-                self.assertEqual(group.findtext('extInfo/representation'), 'None')
+        self.assertEqual(pages.find('items').findtext('name'), 'СтраницаЛист')
+        self.assertEqual(controls['ЛистЗаголовок'].findtext('title/value'), 'ТЕХНИЧЕСКИЙ ЛИСТ')
+        for section in ['Резка', 'ГАР', 'Кромка', 'Сверловка', 'Маркировка', 'Печать', 'Закалка', 'Контроль', 'Пайка']:
+            self.assertEqual(controls['ЛистБлок' + section].findtext('extInfo/representation'), 'NormalSeparation')
+        for name in ['ЛистЧертеж', 'ЛистМаркировка', 'ЛистФото1', 'ЛистФото2', 'ЛистФото3']:
+            self.assertEqual(controls[name].findtext('type'), 'PictureField')
+        for prefix, count in [('Слой', 3), ('Коннектор', 4), ('Отверстие', 1)]:
+            self.assertTrue(all(any(n.startswith(f'Лист{prefix}{i}') for n in controls) for i in range(1, count + 1)))
         self.assertEqual(controls['СообщениеРасчета'].findtext('titleLocation'), 'None')
         self.assertEqual(controls['СообщениеРасчета'].findtext('visible'), 'false')
 
@@ -174,6 +179,31 @@ class TechSheetMetadataTest(unittest.TestCase):
         self.assertIn('Объект.Номенклатура.ПолучитьОбъект()', check)
         self.assertIn('Расш1_ПроверкаТЛ.ОшибкиОбязательныхПолей(Объект.Наименование', check)
         self.assertIn('ВызватьИсключение СтрСоединить(Ошибки, Символы.ПС)', check)
+
+    def test_paper_cells_use_existing_typed_fields_and_stable_row_identifiers(self):
+        metadata = ET.parse(DIR / (NAME + '.mdo')).getroot()
+        tables = {t.findtext('name'): {f.findtext('name'): f for f in t.findall('attributes')}
+                  for t in metadata.findall('tabularSections')}
+        form = ET.parse(FORM).getroot()
+        attributes = {a.findtext('name'): a for a in form.findall('attributes')}
+        controls = {a.findtext('name'): a for a in form.iter('items')}
+        code = (ROOT / 'CommonModules/Расш1_СхемаТЛСервер/Module.bsl').read_text()
+        cells = re.findall(r'"Имя,Таблица,Номер,Реквизит", "([^"]+)", "([^"]+)", (\d+), "([^"]+)"', code)
+        self.assertGreater(len(cells), 50)
+        limits = {'Отверстия': 1, 'СлоиПечати': 3, 'Коннекторы': 4}
+        for name, table, number, field in cells:
+            self.assertLessEqual(int(number), limits[table])
+            self.assertNotIn(field, {'Идентификатор', 'Данные'})
+            source = tables[table][field]
+            self.assertEqual(attributes[name].findtext('valueType/types'), source.findtext('type/types'))
+            self.assertEqual(controls[name].findtext('dataPath/segments'), name)
+            self.assertEqual(controls[name].findtext('handlers/name'), 'ЯчейкаЛистаПриИзменении')
+            self.assertIn('ЛистИД' + table + number, attributes)
+        # Полные таблицы доступны отдельно: видимые колонки не ограничивают данные.
+        for table in limits:
+            self.assertEqual(controls[table].findtext('changeRowSet'), 'true')
+        roles = tables['Файлы']['Назначение']
+        self.assertEqual(roles.findtext('type/types'), 'String')
 
     def test_read_only_roles_cannot_write_technology_or_revision_counter(self):
         for role in ['Оператор', 'Контролер']:

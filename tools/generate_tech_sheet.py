@@ -128,6 +128,7 @@ def catalog(name, label, specs, tables=None, form=True, predefined=None):
 class Card:
     def __init__(self, name, label, full=False):
         self.name, self.full = name, full
+        self.additional_attributes = {}
         self.next_id = 1
         self.root = ET.Element('{' + FORM + '}Form')
         title(self.root, label, 'title')
@@ -184,10 +185,10 @@ class Card:
             child(ext, 'pagesRepresentation', 'TabsOnTop')
         return node
 
-    def field(self, parent, spec, table=None, readonly=False, event=True):
+    def field(self, parent, spec, table=None, readonly=False, event=True, path=None):
         name, caption, kind = spec
-        path = 'Объект.' + (table + '.' if table else '') + name
-        if not table and name == 'Наименование':
+        path = path or 'Объект.' + (table + '.' if table else '') + name
+        if not table and name == 'Наименование' and path == 'Объект.Наименование':
             path = 'Объект.Description'
         node = self.control(parent, 'FormField', (table or '') + name, caption)
         data = child(node, 'dataPath', **{'{' + XSI + '}type': 'form:DataPath'})
@@ -213,6 +214,8 @@ class Card:
             self.handler(node, 'OnChange', 'ПараметрыПриИзменении')
         if self.name == 'Расш1_ПравилаМатериаловТЛ' and name == 'ИсточникМатериала':
             self.handler(node, 'OnChange', 'ИсточникМатериалаПриИзменении')
+        if table == 'Файлы' and name == 'Назначение':
+            self.handler(node, 'OnChange', 'ИзображениеЛистаПриИзменении')
         return node
 
     def fields_grid(self, parent, name, specs, columns=2, readonly=False):
@@ -283,9 +286,16 @@ class Card:
             value_type(message, 'Text', 'valueType')
             for flag in ['view', 'edit']:
                 child(child(message, flag), 'common', 'true')
+        for index, (name, kind) in enumerate(self.additional_attributes.items(), 3):
+            attribute = child(self.root, 'attributes')
+            child(attribute, 'name', name)
+            child(attribute, 'id', index)
+            value_type(attribute, kind, 'valueType')
+            for flag in ['view', 'edit']:
+                child(child(attribute, flag), 'common', 'true')
         child(self.root, 'group', 'Vertical')
         child(self.root, 'autoFillCheck', 'true')
-        child(self.root, 'width', 110 if self.full else 75)
+        child(self.root, 'width', 140 if self.full else 75)
         child(self.root, 'enabled', 'true')
         ext = child(self.root, 'extInfo', **{'{' + XSI + '}type': 'form:CatalogFormExtInfo'})
         if self.full:
@@ -371,40 +381,17 @@ def generate():
     catalog('Расш1_ЦветаСтекол', 'Цвета стекол', [], form=False, predefined=colors)
 
     card = Card('Расш1_ТехническиеЛисты', 'Технический лист', full=True)
-    header = card.group(card.root, 'ШапкаТехЛиста', '')
-    card.field(header, ('Наименование', 'Наименование', 'String'), event=False)
-    primary = {'Номенклатура', 'Характеристика', 'Индивидуальный', 'БазовоеКоличество'}
-    secondary = {'Заказ', 'НомерСтрокиЗаказа', 'Состояние', 'Редакция'}
-    identity = {s[0]: s for s in schema.IDENTITY}
-    card.fields_grid(header, 'ШапкаИзделие', [identity[n] for n in ['Номенклатура', 'Характеристика']])
-    card.fields_grid(header, 'Редакция', [identity[n] for n in ['БазовоеКоличество', 'Состояние', 'Редакция']], columns=3)
-    card.field(header, identity['Индивидуальный'])
-    purpose = card.group(header, 'Назначение', '')
-    card.fields_grid(purpose, 'Назначение', [identity[n] for n in ['Заказ', 'НомерСтрокиЗаказа']])
-    message = card.control(card.root, 'FormField', 'СообщениеРасчета', '')
+    import tech_sheet_paper as paper
+    card.root.set('xmlns:core', 'http://g5.1c.ru/v8/dt/mcore')
+    message = card.control(card.root, 'FormField', 'СообщениеРасчета')
     path = child(message, 'dataPath', **{'{' + XSI + '}type': 'form:DataPath'})
     child(path, 'segments', 'СообщениеРасчета')
     child(message, 'type', 'LabelField')
     child(message, 'titleLocation', 'None')
     message.find('visible').text = 'false'
     child(message, 'readOnly', 'true')
-    message_ext = child(message, 'extInfo', **{'{' + XSI + '}type': 'form:LabelFieldExtInfo'})
-    child(message_ext, 'autoMaxHeight', 'true')
-    child(message_ext, 'horizontalStretch', 'true')
-    pages = card.group(card.root, 'СтраницыТехЛиста', '', 'Pages')
-    for group, caption, fields_ in schema.SECTIONS:
-        page = card.group(pages, 'Страница' + group, caption, 'Page')
-        card.fields_grid(page, 'Параметры' + group, fields_)
-        if group == 'Сверловка':
-            card.table(page, 'Отверстия', *schema.TABLES['Отверстия'])
-        if group == 'Печать':
-            card.table(page, 'СлоиПечати', *schema.TABLES['СлоиПечати'])
-    for table in ['Операции', 'Коннекторы', 'Материалы', 'РучныеМатериалы', 'Файлы']:
-        caption, columns = schema.TABLES[table]
-        page = card.group(pages, 'Страница' + table, caption, 'Page')
-        card.table(page, table, caption, columns)
-    info = card.group(pages, 'СведенияРедакции', 'Сведения о редакции', 'Page')
-    card.fields_grid(info, 'Сведения', [f for f in schema.IDENTITY if f[0] not in primary | secondary | schema.HIDDEN], readonly=True)
+    child(message, 'extInfo', **{'{' + XSI + '}type': 'form:LabelFieldExtInfo'})
+    paper.generate(card, sys.modules[__name__])
     card.finish()
     for name, caption, fields_ in [
             ('Расш1_ОперацииТЛ', 'Операция технического листа', schema.OPERATION_FIELDS),
@@ -414,7 +401,7 @@ def generate():
         form.fields_grid(form.root, 'Реквизиты', fields_)
         form.finish()
 
-    modules = ['Расш1_МатериалыТЛРасчет', 'Расш1_ТехническиеЛистыСервер', 'Расш1_ПечатьТЛСервер', 'Расш1_СхемаТЛСервер', 'Расш1_ПроверкаТЛ']
+    modules = ['Расш1_МатериалыТЛРасчет', 'Расш1_ТехническиеЛистыСервер', 'Расш1_ПечатьТЛСервер', 'Расш1_СхемаТЛСервер', 'Расш1_ПроверкаТЛ', 'Расш1_ЯчейкиЛистаТЛ']
     for name in modules:
         module = ET.Element('{' + MD + '}CommonModule', {'uuid': uid('CommonModule.' + name)})
         child(module, 'name', name)
@@ -426,6 +413,15 @@ def generate():
     for name, caption, fields_ in [('Сведения', 'Сведения о редакции', schema.IDENTITY)] + schema.SECTIONS:
         names = ','.join(f[0] for f in fields_ if f[0] not in schema.HIDDEN)
         lines += [f'\tРезультат.Добавить(Новый Структура("Заголовок,Поля", "{caption}",', f'\t\t"{names}"));']
+    lines += ['\tВозврат Результат;', 'КонецФункции', '']
+    lines += ['Функция ЯчейкиЛиста() Экспорт', '\tРезультат = Новый Массив;']
+    for name, table, number, field, caption, kind in paper.cells():
+        lines.append(f'\tРезультат.Добавить(Новый Структура("Имя,Таблица,Номер,Реквизит", "{name}", "{table}", {number}, "{field}"));')
+    lines += ['\tВозврат Результат;', 'КонецФункции', '', 'Функция ШкалыЛиста() Экспорт', '\tРезультат = Новый Массив;']
+    for code, value in paper.THICKNESSES:
+        lines.append(f'\tРезультат.Добавить(Новый Структура("Имя,Реквизит,Значение", "ЛистВыборТолщина{code}", "ТолщинаМм", {value}));')
+    for code in paper.COLORS:
+        lines.append(f'\tРезультат.Добавить(Новый Структура("Имя,Реквизит,Значение", "ЛистВыборЦвет{code}", "ЦветСтекла", "{code}"));')
     lines += ['\tВозврат Результат;', 'КонецФункции', '']
     path = SRC / 'CommonModules/Расш1_СхемаТЛСервер/Module.bsl'
     path.write_text('\n'.join(lines), encoding='utf-8')
