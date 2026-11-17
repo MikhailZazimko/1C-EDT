@@ -1,0 +1,28 @@
+{
+  "artifact": "ut115_clear_item_images_1_0_0.epf",
+  "size": 14216,
+  "sha256": "78ea8c9f494a4955222ea1ae6ef7da88d746a512aa1a448edd4de18fef49e64f",
+  "target_configuration": "Управление торговлей 11.5.27.107",
+  "tests": 7,
+  "passed": 7,
+  "bsl_parse_errors": 0,
+  "epf_roundtrip_verified": true,
+  "original_api_credentials_absent": true,
+  "processing_identity_and_form_property_bindings_verified": true,
+  "scope": "selected image files owned by nomenclature items, stored in database",
+  "deletion_backend": "standard BSP deletion processor with explicit selected-file array",
+  "core_tests_with_transaction_and_bsp_test_adapters": [
+    "selected file deletion and all primary image links cleared",
+    "other files retained",
+    "rollback on business references",
+    "rollback on write failure",
+    "rollback on BSP deletion failure",
+    "rollback when deletion reports success but file remains",
+    "non-image files, disk volumes and other owners rejected",
+    "stale metadata snapshot and unlisted selections rejected",
+    "deduplication, bounded batches, stop and readonly fields"
+  ],
+  "actual_1c_bsp_nested_transactions_and_gui": "not run; Linux environment without 1C",
+  "user_database": "not accessed or modified",
+  "package_password": "none; no API credentials in this processing"
+}
